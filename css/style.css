@@ -102,9 +102,13 @@
 	transform: scale(1);
 }
 
+
 .register-link-login-text:hover, .login-link-text:hover {
 	cursor: pointer;
 	transform: scale(1.05);
+}
+.login-link-button, .login-link-button:visited {
+	text-decoration: none;
 }
 
 .register-button-confirm, .login-button-confirm{
@@ -182,34 +186,65 @@
 	transform: scale(1.05);
 }
 
-.main-page-container-about {
+.main-page-container-section {
 	background-color: var(--azul);
 	margin-top: 40px;
-	margin-left: 20px;
+	margin-left: 30px;
 	width: 92%;
 	height: 350px;
 	border-radius: 30px;
-	padding: 20px;
+	padding: 15px;
 	display: flex;
 	flex-direction: row;
+	transition: all 0.3s ease;
+	transform: scale(1);
 }
 
-.main-page-container-about-title {
+.main-page-container-section:hover {
+	transform: scale(1.03);
+	cursor: pointer;
+	
+}
+
+.main-page-container-title {
 	color: var(--amarelo);
 	margin-left: 50px;
 	font-size: 50px;
 	margin-top: 20px;
 }
 
-.main-page-container-about-text {
+.main-page-container-text {
 	width: 60%;
 	color: var(--branco);
 	margin-left: 50px;
 	margin-top: 130px;
 	position: absolute;
+	text-align: justify;
 }
 
-.main-page-container-about-image {
+.main-page-container-image {
 	width: 300px;
 	margin-left: 60%;
+}
+
+.main-page-container-section-right {
+	margin-left: 60px;
+}
+
+.main-page-container-title-right{
+	margin-left: 8.5%;
+}
+
+.main-page-container-text-right {
+	margin-left: 32.5%;
+	text-align: justify;
+	width: 57%;
+}
+
+.main-page-container-image-right {
+	margin-left: 5%;
+}
+
+.main-page-link-div, .main-page-link-div:visited {
+	text-decoration: none;
 }
