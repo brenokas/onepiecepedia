@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+:root {
+	--amarelo: #f8de3c;
+	--branco: #fefefe;
+	--azul-claro: #58acf4;
+	--azul: #105edd;
+	--azul-escuro: #0b3075;
+}
+
+* {
+	font-family: 'Special Gothic Expanded One', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.register-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.register-body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: blur(3px);
+	z-index: 0;
+}
+
+.register-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--azul);
+	width: 400px;
+	padding: 20px;
+	border-radius: 30px;
+	z-index: 1;
+	margin-top: 20px;
+}
+
+.register-title {
+	z-index: 1;
+	color: var(--branco);
+	margin-top: 30px;
+	font-size: 50px;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.256);
+}
+
+.register-title-yellow {
+	color: var(--amarelo);
+}
+
+.register-msg {
+	color: var(--branco);
+	font-size: 30px;
+	text-align: center;
+}
+
+.register-label {
+	color: var(--amarelo);
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.register-input {
+	border: none;
+	padding: 5px 5px;
+	width: 290px;
+	height: 20px;
+	border-radius: 13px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.register-input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 3px solid var(--azul-claro);
+}
+
+.register-link-login-text {
+	margin-top: 20px;
+	text-decoration: none;
+	color: var(--branco);
+	transition: all 0.3s ease;
+	transform: scale(1);
+}
+
+.register-link-login-text:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.register-button-confirm {
+	margin-top: 20px;
+	width: 200px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	font-size: 20px;
+	color: var(--branco);
+	background-color: var(--azul-claro);
+	transition: all 0.3s ease;
+	transform: scale(1);
+}
+
+.register-button-confirm:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	background-color: var(--azul-escuro);
+}
+
+
+.default-footer {
+    z-index: 1;
+}
+
+.default-footer-text {
+    color: var(--branco);
+    font-size: 8px;
+    margin-top: 30px;
+	font-style: italic;
+}
+
+.name-default-footer {
+    text-decoration: none;
+    color: var(--branco);
+    font-style: italic;
+    text-decoration: underline;
+}
