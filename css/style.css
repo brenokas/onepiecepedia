@@ -16,6 +16,8 @@
 	padding: 0;
 }
 
+/*LOGIN E CADASTRO*/
+
 .register-body, .login-body {
 	display: flex;
 	flex-direction: column;
@@ -140,4 +142,74 @@
     color: var(--branco);
     font-style: italic;
     text-decoration: underline;
+}
+
+/*MAIN PAGE*/
+
+.main-page-body {
+	background-color: var(--azul-escuro);
+}
+
+.main-header{
+	background-color: var(--azul);
+	height: 70px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.main-header-title {
+	margin-left: 38vw;
+	color: var(--branco);
+	margin-top: 15px;
+}
+
+.main-header-title-yellow {
+	color: var(--amarelo);
+}
+
+.main-header-profile-link {
+	color: var(--branco);
+	text-decoration: none;
+	margin-right: 50px;
+	margin-top: 20px;
+	font-size: 22px;
+	transition: all 0.3s ease;
+	transform: scale(1);
+}
+
+.main-header-profile-link:hover {
+	transform: scale(1.05);
+}
+
+.main-page-container-about {
+	background-color: var(--azul);
+	margin-top: 40px;
+	margin-left: 20px;
+	width: 92%;
+	height: 350px;
+	border-radius: 30px;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.main-page-container-about-title {
+	color: var(--amarelo);
+	margin-left: 50px;
+	font-size: 50px;
+	margin-top: 20px;
+}
+
+.main-page-container-about-text {
+	width: 60%;
+	color: var(--branco);
+	margin-left: 50px;
+	margin-top: 130px;
+	position: absolute;
+}
+
+.main-page-container-about-image {
+	width: 300px;
+	margin-left: 60%;
 }
