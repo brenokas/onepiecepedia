@@ -150,7 +150,7 @@
 
 /*MAIN PAGE*/
 
-.main-page-body {
+.main-page-body, .sobre-page-body {
 	background-color: var(--azul-escuro);
 }
 
@@ -181,6 +181,16 @@
 	transition: all 0.3s ease;
 	transform: scale(1);
 }
+
+.main-header-index-link {
+	text-decoration: none;
+
+}
+
+.main-header-index-link:visited {
+	text-decoration: none;
+}
+
 
 .main-header-profile-link:hover {
 	transform: scale(1.05);
@@ -223,8 +233,9 @@
 }
 
 .main-page-container-image {
-	width: 300px;
-	margin-left: 60%;
+	margin-left: 50%;
+	margin-top: 2%;
+	height: 80%;
 }
 
 .main-page-container-section-right {
@@ -247,4 +258,37 @@
 
 .main-page-link-div, .main-page-link-div:visited {
 	text-decoration: none;
+}
+
+/* SOBRE */
+
+
+.sobre-page-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.sobre-page-title {
+	color: var(--amarelo);
+	font-size: 2.3rem;
+	margin-top: 3%;
+}
+
+.sobre-page-text {
+	color: var(--branco);
+	position: absolute;
+	width: 50%;
+	margin-top: 2%;
+}
+
+.sobre-page-div {
+	width: 80%;
+	margin: 5%;
+	
+}
+.sobre-page-img {
+	width: 300px;
+	margin-left: 75%;
 }
