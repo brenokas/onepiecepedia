@@ -5,21 +5,64 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>One PiecePedia</title>
 		<link rel="stylesheet" href="../css/style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 		<script src="../js/main.js"></script>
 	</head>
 	<body class="sobre-page-body">
-        <header class="main-header main-page-header">
-            <a href="index.html" class="main-header-index-link">
-				<h1 class="main-header-title main-page-header-title"><span class="main-header-title-yellow main-page-header-title-yellow">ONE PIECE</span>PEDIA</h1>
+		<header class="main-header main-page-header">
+			<a href="index.html" class="main-header-index-link">
+				<h1 class="main-header-title main-page-header-title">
+					<span class="main-header-title-yellow main-page-header-title-yellow">ONE PIECE</span>PEDIA
+				</h1>
 			</a>
-            <a href="perfil.html" class="main-header-profile-link main-page-header-profile-link">Perfil</a>
-        </header>
+			<a href="perfil.html" class="main-header-profile-link main-page-header-profile-link">Perfil</a>
+		</header>
 		<div class="sobre-page-container">
 			<h2 class="sobre-page-title">Sobre</h2>
+			<div class="sobre-page-div-top">
+				<p class="sobre-page-text">
+					<span class="sobre-page-text-yellow">One Piece</span> é uma série de mangá escrita e ilustrada por
+					<span class="sobre-page-text-yellow">Eiichiro Oda</span>. Os capítulos são publicados na revista Weekly Shōnen Jump desde julho de 1997, com
+					os capítulos compilados e publicados em 111 volumes pela editora Shueisha até os dias de hoje. One Piece segue as aventuras de Monkey D.
+					Luffy, um jovem cujo corpo ganhou as propriedades de borracha após ter comido a fruta desse poder acidentalmente.
+				</p>
+				<img src="../img/oda.jpg" alt="Eiichiro Oda" class="sobre-page-img-oda" />
+			</div>
+			<div class="sobre-page-div-left">
+				<img
+					src="https://omelete-web-stories-prod.s3.amazonaws.com/one-piece-netflix-2a-temporada-personagens/assets/571818af-34f8-4984-bd51-02e5d63797ac"
+					alt="Monkey D. Luffy"
+					class="sobre-page-img2" />
+				<p class="sobre-page-text-left">
+					Com sua tripulação, os <span class="sobre-page-text-yellow">Piratas do Chapéu de Palha</span>, Luffy explora a Grand Line em busca do
+					tesouro mais procurado do mundo, o "<span class="sobre-page-text-yellow">One Piece</span>", a fim de se tornar o próximo Rei dos Piratas.
+					One Piece atingiu a marca de <span class="sobre-page-text-yellow">mil capítulos publicados</span> na Weekly Shonen Jump em janeiro de 2021,
+					se tornando um dos raros mangás a ultrapassar tal marca.
+				</p>
+			</div>
 			<div class="sobre-page-div">
-				<p class="sobre-page-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, laborum illo quibusdam possimus, maxime minus sequi expedita ratione pariatur fugiat, aliquam consectetur? Obcaecati vel culpa iste veniam corporis officiis aliquid? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, quo sed, aliquam ducimus aperiam necessitatibus facere eum ipsum porro cumque fugit omnis commodi repellendus deserunt dolorem possimus nihil voluptate dolorum.</p>
-				<img src="../img/oda.jpg" alt="Eiichiro Oda" class="sobre-page-img">
+				<p class="sobre-page-text">
+					Até agosto de 2022, tinha mais de
+					<span class="sobre-page-text-yellow">516,6 milhões de cópias em circulação em 61 países e regiões ao redor do mundo</span>, tornando-se a
+					série de mangá mais vendida da história e a série de quadrinhos em volume mais vendida do mundo. Vários volumes do mangá quebraram recordes
+					de publicação. De 2015 e 2022, One Piece estabeleceu o recorde no Guinness World Records como "<span class="sobre-page-text-yellow"
+						>a série de quadrinhos com mais cópias publicadas por um único autor</span
+					>".
+				</p>
+				<img
+					src="https://pa1.aminoapps.com/6618/f48f810027265be3345101c1ca0d9f4117508ee6_hq.gif"
+					alt="Monkey D. Luffy"
+					class="sobre-page-img-luffy2" />
+			</div>
+			<h3 class="sobre-page-graphic-title">Quantidade de episódios por saga</h3>
+			<div class="sobre-page-graphic">
+				<canvas id="graficoEpisodios"></canvas>
 			</div>
 		</div>
-    </body>
+
+		<footer class="sobre-page-footer">
+			Feito por <a href="https://github.com/brenokas" class="name-default-footer">Breno de Freitas</a> - 1SIS2025 @ São Paulo Tech School
+		</footer>
+	</body>
 </html>

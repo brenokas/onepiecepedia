@@ -131,7 +131,7 @@
 }
 
 
-.default-footer {
+.default-footer{
     z-index: 1;
 	position: fixed;
 	bottom: 0;
@@ -232,10 +232,15 @@
 	text-align: justify;
 }
 
-.main-page-container-image {
+.main-page-container-image-luffy {
 	margin-left: 50%;
 	margin-top: 2%;
 	height: 80%;
+}
+
+.main-page-container-image-zoro {
+	margin-left: 60%;
+	margin-top: 2%;
 }
 
 .main-page-container-section-right {
@@ -272,7 +277,7 @@
 
 .sobre-page-title {
 	color: var(--amarelo);
-	font-size: 2.3rem;
+	font-size: 2.5rem;
 	margin-top: 3%;
 }
 
@@ -280,15 +285,59 @@
 	color: var(--branco);
 	position: absolute;
 	width: 50%;
-	margin-top: 2%;
+	margin-top: 4%;
+	font-size: 1.3rem;
 }
 
-.sobre-page-div {
-	width: 80%;
-	margin: 5%;
-	
+.sobre-page-text-left {
+	color: var(--branco);
+	width: 60%;
+	margin-top: 3%;
+	margin-left: 7%;
+	font-size: 1.3rem;
 }
-.sobre-page-img {
-	width: 300px;
+
+.sobre-page-text-yellow {
+	color: var(--azul-claro);
+}
+
+.sobre-page-div-top, .sobre-page-div-left, .sobre-page-div {
+	display: flex;
+	width: 80%;
+	margin-top: 5%;
+}
+
+.sobre-page-img-oda, .sobre-page-img-luffy2{
+	width: 30%;
 	margin-left: 75%;
+}
+
+.sobre-page-img2 {
+	width: 30%;
+}
+
+.sobre-page-img-luffy2 {
+	margin-top: 3%;
+	width: 40%;
+	margin-left: 66%;
+}
+
+.sobre-page-footer {
+	bottom: 0;
+	font-size: 8px;
+	margin-bottom: 20px;
+	color: var(--branco);
+	font-style: italic;
+	text-align: center;
+	margin-top: 5%;
+}
+
+.sobre-page-graphic {
+	width: 50%;
+}
+
+.sobre-page-graphic-title {
+	margin-top: 5%;
+	color: var(--amarelo);
+	font-size: 1.6rem;
 }
