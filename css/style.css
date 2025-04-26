@@ -287,6 +287,7 @@
 	width: 50%;
 	margin-top: 4%;
 	font-size: 1.3rem;
+	text-align: justify;
 }
 
 .sobre-page-text-left {
@@ -295,6 +296,7 @@
 	margin-top: 3%;
 	margin-left: 7%;
 	font-size: 1.3rem;
+	text-align: justify;
 }
 
 .sobre-page-text-yellow {
@@ -322,6 +324,17 @@
 	margin-left: 66%;
 }
 
+.sobre-page-graphic {
+	width: 50%;
+	background-color: var(--azul-escuro);
+}
+
+.sobre-page-graphic-title {
+	margin-top: 5%;
+	color: var(--amarelo);
+	font-size: 1.6rem;
+}
+
 .sobre-page-footer {
 	bottom: 0;
 	font-size: 8px;
@@ -332,12 +345,3 @@
 	margin-top: 5%;
 }
 
-.sobre-page-graphic {
-	width: 50%;
-}
-
-.sobre-page-graphic-title {
-	margin-top: 5%;
-	color: var(--amarelo);
-	font-size: 1.6rem;
-}
