@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					max: 6000000000,
 					title: {
 						display: true,
-						text: 'Recompensa',
+						text: 'Recompensa em Bellys',
 						color: '#fefefe',
 						font: {
 							size: 15,
