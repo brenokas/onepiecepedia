@@ -14,14 +14,14 @@ const nomesSagas = [
 	'Saga Final (em andamento)',
 ];
 
-const qtdEpisodios = [61, 74, 71, 119, 59, 132, 58, 54, 122, 32, 107, 199, 34];
+const qtdEpisodios = [61, 74, 71, 119, 59, 132, 58, 54, 122, 32, 107, 199, 35];
 
 const nomesCapitaes = ['Monkey D. Luffy', 'Shanks, "O ruivo"', 'Marshall D. Teach', 'Kaido', 'Big Mom', 'Buggy', 'Barba Branca'];
-const recompensasCapitaes = [3000000000, 4048900000, 3996000000,4611100000,  4388000000, 3189000000, 5046000000];
+const recompensasCapitaes = [3000000000, 4048900000, 3996000000, 4611100000, 4388000000, 3189000000, 5046000000];
 
 document.addEventListener('DOMContentLoaded', () => {
 	new Chart(document.getElementById('graficoEpisodios'), {
-		type: 'bar',
+		type: 'line',
 		data: {
 			labels: nomesSagas,
 			datasets: [
@@ -29,8 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					label: '',
 					data: qtdEpisodios,
 					borderWidth: 1,
-					backgroundColor: '#F8DE3C',
 					tension: 0.4,
+					pointBackgroundColor: '#F8DE3C',
+					borderColor: '#f8de3c',
 				},
 			],
 		},
@@ -118,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
 					borderWidth: 1,
 					backgroundColor: '#F8DE3C',
 					tension: 0.4,
-					
 				},
 			],
 		},
@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
 						weight: 'bold',
 						size: 12,
 					},
-					formatter: function(value) {
-						return new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2}).format(value)
-					}
+					formatter: function (value) {
+						return new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(value);
+					},
 				},
 			},
 
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						color: '#fefefe',
 						font: {
 							size: 12,
-						}
+						},
 					},
 					grid: {
 						color: 'rgb(254, 254, 254, 0.10)',

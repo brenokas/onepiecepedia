@@ -362,7 +362,8 @@
 }
 
 .sobre-page-footer,
-.bandos-page-footer {
+.bandos-page-footer,
+.main-page-footer {
 	bottom: 0;
 	font-size: 8px;
 	margin-bottom: 20px;
