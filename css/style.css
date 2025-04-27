@@ -18,7 +18,8 @@
 
 /*LOGIN E CADASTRO*/
 
-.register-body, .login-body {
+.register-body,
+.login-body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,7 +27,8 @@
 	overflow: hidden;
 }
 
-.register-body::before, .login-body::before {
+.register-body::before,
+.login-body::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -41,7 +43,8 @@
 	z-index: 0;
 }
 
-.register-container, .login-container {
+.register-container,
+.login-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -54,7 +57,8 @@
 	margin-top: 20px;
 }
 
-.register-title, .login-title {
+.register-title,
+.login-title {
 	z-index: 1;
 	color: var(--branco);
 	margin-top: 30px;
@@ -62,23 +66,27 @@
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.256);
 }
 
-.register-title-yellow, .login-title-yellow	 {
+.register-title-yellow,
+.login-title-yellow {
 	color: var(--amarelo);
 }
 
-.register-msg, .login-msg {
+.register-msg,
+.login-msg {
 	color: var(--branco);
 	font-size: 30px;
 	text-align: center;
 }
 
-.register-label, .login-label {
+.register-label,
+.login-label {
 	color: var(--amarelo);
 	font-size: 20px;
 	margin-top: 20px;
 }
 
-.register-input, .login-input {
+.register-input,
+.login-input {
 	border: none;
 	padding: 5px 5px;
 	width: 290px;
@@ -88,13 +96,15 @@
 	font-size: 15px;
 }
 
-.register-input:focus, .login-input:focus {
-    outline: none;
-    box-shadow: none;
-    border: 3px solid var(--azul-claro);
+.register-input:focus,
+.login-input:focus {
+	outline: none;
+	box-shadow: none;
+	border: 3px solid var(--azul-claro);
 }
 
-.register-link-login-text, .login-link-text {
+.register-link-login-text,
+.login-link-text {
 	margin-top: 20px;
 	text-decoration: none;
 	color: var(--branco);
@@ -102,16 +112,18 @@
 	transform: scale(1);
 }
 
-
-.register-link-login-text:hover, .login-link-text:hover {
+.register-link-login-text:hover,
+.login-link-text:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 }
-.login-link-button, .login-link-button:visited {
+.login-link-button,
+.login-link-button:visited {
 	text-decoration: none;
 }
 
-.register-button-confirm, .login-button-confirm{
+.register-button-confirm,
+.login-button-confirm {
 	margin-top: 20px;
 	width: 200px;
 	height: 40px;
@@ -124,15 +136,15 @@
 	transform: scale(1);
 }
 
-.register-button-confirm:hover, .login-button-confirm:hover{
+.register-button-confirm:hover,
+.login-button-confirm:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 	background-color: var(--azul-escuro);
 }
 
-
-.default-footer{
-    z-index: 1;
+.default-footer {
+	z-index: 1;
 	position: fixed;
 	bottom: 0;
 	font-size: 8px;
@@ -142,19 +154,21 @@
 }
 
 .name-default-footer {
-    text-decoration: none;
-    color: var(--branco);
-    font-style: italic;
-    text-decoration: underline;
+	text-decoration: none;
+	color: var(--branco);
+	font-style: italic;
+	text-decoration: underline;
 }
 
 /*MAIN PAGE*/
 
-.main-page-body, .sobre-page-body {
+.main-page-body,
+.sobre-page-body,
+.bandos-page-body {
 	background-color: var(--azul-escuro);
 }
 
-.main-header{
+.main-header {
 	background-color: var(--azul);
 	height: 70px;
 	display: flex;
@@ -184,13 +198,11 @@
 
 .main-header-index-link {
 	text-decoration: none;
-
 }
 
 .main-header-index-link:visited {
 	text-decoration: none;
 }
-
 
 .main-header-profile-link:hover {
 	transform: scale(1.05);
@@ -213,7 +225,6 @@
 .main-page-container-section:hover {
 	transform: scale(1.03);
 	cursor: pointer;
-	
 }
 
 .main-page-container-title {
@@ -247,7 +258,7 @@
 	margin-left: 60px;
 }
 
-.main-page-container-title-right{
+.main-page-container-title-right {
 	margin-left: 8.5%;
 }
 
@@ -261,27 +272,30 @@
 	margin-left: 5%;
 }
 
-.main-page-link-div, .main-page-link-div:visited {
+.main-page-link-div,
+.main-page-link-div:visited {
 	text-decoration: none;
 }
 
 /* SOBRE */
 
-
-.sobre-page-container {
+.sobre-page-container,
+.bandos-page-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
-.sobre-page-title {
+.sobre-page-title,
+.bandos-page-title {
 	color: var(--amarelo);
 	font-size: 2.5rem;
 	margin-top: 3%;
 }
 
-.sobre-page-text {
+.sobre-page-text,
+.bandos-page-text {
 	color: var(--branco);
 	position: absolute;
 	width: 50%;
@@ -290,7 +304,8 @@
 	text-align: justify;
 }
 
-.sobre-page-text-left {
+.sobre-page-text-left,
+.bandos-page-text-left {
 	color: var(--branco);
 	width: 60%;
 	margin-top: 3%;
@@ -299,26 +314,36 @@
 	text-align: justify;
 }
 
-.sobre-page-text-yellow {
+.sobre-page-text-blue,
+.bandos-page-text-blue {
 	color: var(--azul-claro);
 }
 
-.sobre-page-div-top, .sobre-page-div-left, .sobre-page-div {
+.sobre-page-div-top,
+.sobre-page-div-left,
+.sobre-page-div,
+.bandos-page-div-top,
+.bandos-page-div-left,
+.bandos-page-div {
 	display: flex;
 	width: 80%;
 	margin-top: 5%;
 }
 
-.sobre-page-img-oda, .sobre-page-img-luffy2{
+.sobre-page-img-oda,
+.sobre-page-img-luffy2,
+.bandos-page-img-luffy2 {
 	width: 30%;
 	margin-left: 75%;
 }
 
-.sobre-page-img2 {
+.sobre-page-img2,
+.bandos-page-img2 {
 	width: 30%;
 }
 
-.sobre-page-img-luffy2 {
+.sobre-page-img-luffy2,
+.bandos-page-img-luffy2 {
 	margin-top: 3%;
 	width: 40%;
 	margin-left: 66%;
@@ -326,16 +351,17 @@
 
 .sobre-page-graphic {
 	width: 50%;
-	background-color: var(--azul-escuro);
 }
 
-.sobre-page-graphic-title {
+.sobre-page-graphic-title,
+.bandos-page-graphic-title {
 	margin-top: 5%;
 	color: var(--amarelo);
 	font-size: 1.6rem;
 }
 
-.sobre-page-footer {
+.sobre-page-footer,
+.bandos-page-footer {
 	bottom: 0;
 	font-size: 8px;
 	margin-bottom: 20px;
@@ -345,3 +371,76 @@
 	margin-top: 5%;
 }
 
+/* BANDOS */
+.bandos-page-div-top {
+	margin-bottom: 5%;
+}
+
+.bandos-page-img-sanji {
+	margin-top: 3%;
+	width: 75%;
+	margin-left: 70%;
+}
+
+.bandos-page-img2 {
+	width: 45%;
+	height: 50%;
+	margin-top: 4%;
+}
+
+.bandos-page-text-left {
+	margin-top: 8%;
+}
+
+.bandos-page-div-left {
+	margin-top: 0;
+}
+
+.bandos-page-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.bandos-page-subtitle {
+	color: var(--amarelo);
+	font-size: 2.5rem;
+	text-align: center;
+	margin-top: 4%;
+}
+
+.img-belly {
+	width: 12px;
+	height: 20px;
+}
+
+.bandos-page-description {
+	text-align: justify;
+	width: 50%;
+}
+
+.bandos-page-description span {
+	color: var(--branco);
+}
+
+.bandos-page-description h4 {
+	color: var(--amarelo);
+	margin-bottom: 4%;
+	font-size: 1.7rem;
+	margin-top: 5%;
+}
+
+.bandos-page-description-ruivos {
+	margin-left: 10%;
+	width: 60%;
+}
+
+.bandos-page-img-ruivos {
+	margin-left: 5%;
+}
+
+.bandos-page-graphic {
+	width: 60%;
+	margin-top: 3%;
+}
