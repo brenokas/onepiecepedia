@@ -178,10 +178,9 @@
 
 
 .main-header-title {
-	color: var(--branco);
-	margin-top: 10px;
 	margin-left: 38vw;
-	font-size: 2.8rem;
+	color: var(--branco);
+	margin-top: 15px;
 }
 
 .main-header-title-yellow {
@@ -243,7 +242,6 @@
 	margin-top: 130px;
 	position: absolute;
 	text-align: justify;
-	font-size: 1.4rem;
 }
 
 .main-page-container-image-luffy {
@@ -262,7 +260,7 @@
 }
 
 .main-page-container-title-right {
-	margin-left: 6%;
+	margin-left: 8.5%;
 }
 
 .main-page-container-text-right {
@@ -293,26 +291,28 @@
 .sobre-page-title,
 .bandos-page-title {
 	color: var(--amarelo);
-	font-size: 3.7rem;
+	font-size: 2.5rem;
 	margin-top: 3%;
 }
 
 .sobre-page-text,
-.bandos-page-text,
-.sobre-page-text-left,
-.bandos-page-text-left {
+.bandos-page-text {
 	color: var(--branco);
 	position: absolute;
 	width: 50%;
 	margin-top: 4%;
-	font-size: 1.7rem;
+	font-size: 1.3rem;
 	text-align: justify;
 }
 
 .sobre-page-text-left,
 .bandos-page-text-left {
+	color: var(--branco);
+	width: 60%;
+	margin-top: 3%;
 	margin-left: 7%;
-	position: relative;
+	font-size: 1.3rem;
+	text-align: justify;
 }
 
 .sobre-page-text-blue,
@@ -358,13 +358,12 @@
 .bandos-page-graphic-title {
 	margin-top: 5%;
 	color: var(--amarelo);
-	font-size: 2.5rem;
+	font-size: 1.6rem;
 }
 
 .sobre-page-footer,
 .bandos-page-footer,
-.main-page-footer,
-.quiz-page-footer {
+.main-page-footer {
 	bottom: 0;
 	font-size: 8px;
 	margin-bottom: 20px;
@@ -419,9 +418,8 @@
 }
 
 .bandos-page-description {
-	text-align: left;
+	text-align: justify;
 	width: 50%;
-	font-size: 1.5rem;
 }
 
 .bandos-page-description span {
@@ -431,7 +429,7 @@
 .bandos-page-description h4 {
 	color: var(--amarelo);
 	margin-bottom: 4%;
-	font-size: 2.5rem;
+	font-size: 1.7rem;
 	margin-top: 5%;
 }
 
