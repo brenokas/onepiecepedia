@@ -124,7 +124,8 @@
 
 .register-button-confirm,
 .login-button-confirm,
-.perfil-button-sair {
+.perfil-button-sair,
+.quiz-button-start {
 	margin-top: 20px;
 	width: 200px;
 	height: 40px;
@@ -139,7 +140,8 @@
 
 .register-button-confirm:hover,
 .login-button-confirm:hover,
-.perfil-button-sair:hover {
+.perfil-button-sair:hover,
+.quiz-button-start:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 	background-color: var(--azul-escuro);
@@ -167,7 +169,8 @@
 .main-page-body,
 .sobre-page-body,
 .bandos-page-body,
-.perfil-page-body{
+.perfil-page-body,
+.quiz-index-page-body{
 	background-color: var(--azul-escuro);
 }
 
@@ -187,7 +190,8 @@
 }
 
 .main-header-title-yellow,
-.perfil-title-yellow {
+.perfil-title-yellow,
+.quiz-page-title-yellow {
 	color: var(--amarelo);
 }
 
@@ -367,7 +371,8 @@
 
 .sobre-page-footer,
 .bandos-page-footer,
-.main-page-footer {
+.main-page-footer,
+.quiz-page-footer {
 	bottom: 0;
 	font-size: 8px;
 	margin-bottom: 20px;
@@ -513,4 +518,40 @@
 
 .perfil-button-sair:hover {
 	background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* QUIZ */
+
+.quiz-page-title-container {
+	color: var(--amarelo);
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2%;
+}
+
+.quiz-page-button-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5%;
+}
+
+.quiz-page-text-description {
+	color: var(--branco);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 5%;
+	font-size: 1.4rem;
+}
+
+.quiz-page-footer {
+	margin-top: 15%;
+}
+
+.quiz-button-start:hover {
+	background-color: var(--azul);
 }
