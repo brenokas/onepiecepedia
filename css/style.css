@@ -123,7 +123,8 @@
 }
 
 .register-button-confirm,
-.login-button-confirm {
+.login-button-confirm,
+.perfil-button-sair {
 	margin-top: 20px;
 	width: 200px;
 	height: 40px;
@@ -137,7 +138,8 @@
 }
 
 .register-button-confirm:hover,
-.login-button-confirm:hover {
+.login-button-confirm:hover,
+.perfil-button-sair:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 	background-color: var(--azul-escuro);
@@ -164,7 +166,8 @@
 
 .main-page-body,
 .sobre-page-body,
-.bandos-page-body {
+.bandos-page-body,
+.perfil-page-body{
 	background-color: var(--azul-escuro);
 }
 
@@ -183,7 +186,8 @@
 	margin-top: 15px;
 }
 
-.main-header-title-yellow {
+.main-header-title-yellow,
+.perfil-title-yellow {
 	color: var(--amarelo);
 }
 
@@ -445,4 +449,68 @@
 .bandos-page-graphic {
 	width: 60%;
 	margin-top: 3%;
+}
+
+/* PERFIL */
+
+.perfil-page-title-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.perfil-page-main-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20%;
+}
+
+.perfil-page-personagem-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3%;
+}
+
+.perfil-title {
+	color: var(--branco);
+	margin-top: 3%;
+}
+
+.perfil-page-subtitle {
+	color: var(--branco);
+	font-size: 1.7rem;
+}
+
+.perfil-page-icon-image {
+	width: 70%;
+	border-radius: 50%;
+}
+
+.perfil-page-personagem-name {
+	font-size: 1.7rem;
+}
+
+.perfil-page-personagem-description-container {
+	width: 40%;
+	font-size: 1.4rem;
+}
+
+.perfil-page-descricao-personagem-text {
+	color: var(--branco);
+}
+
+.perfil-page-button-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3%;
+}
+
+.perfil-button-sair:hover {
+	background-color: rgba(255, 0, 0, 0.5);
 }
