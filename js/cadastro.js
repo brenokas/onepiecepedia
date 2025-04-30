@@ -46,29 +46,4 @@ botao_registrar.addEventListener('click', () => {
 		}, 4000);
 	}
 
-	fetch('/usuarios/cadastrar', {
-		method: 'POST',
-		headers: {
-			'Content-type': 'application/json',
-		},
-		body: JSON.stringify({
-			nomeServer: nome,
-			emailServer: email,
-			senhaServer: senha,
-		}),
-	}).then((resposta) => {
-		console.log('resposta: ', resposta);
-		if (resposta.ok) {
-			exibeConfirmacao('Cadastro realizado com sucesso! Redirecionando para o login...');
-			setTimeout(() => {
-				window.location.href = 'login.html';
-			}, 2000);
-		} else {
-			throw "Houve um erro ao tentar realizar o cadastro!"
-		}
-	}).catch((resposta) => {
-		console.log(`#ERRO: ${resposta}`);
-	})
-
-	return false;
 });
