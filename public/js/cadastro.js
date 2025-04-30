@@ -3,11 +3,6 @@ const divMsgErro = document.getElementById('msgErro');
 
 //cadastrando
 botao_registrar.addEventListener('click', () => {
-	let nome = document.getElementById('id-register-input-name').value;
-	let email = document.getElementById('id-register-input-email').value;
-	let senha = document.getElementById('id-register-input-password').value;
-	let confirmSenha = document.getElementById('id-register-input-confirm-password').value;
-
 	const exibeErro = (msg) => {
 		divMsgErro.style.display = 'flex';
 		divMsgErro.innerHTML = msg;
@@ -19,10 +14,12 @@ botao_registrar.addEventListener('click', () => {
 		divMsgErro.innerHTML = msg;
 	};
 
-	// constante para a validação da senha
-	const validacaoSenha = /[a-zA-Z]/.test(senha) && /[0-9]/.test(senha) && /[^a-zA-Z0-9]/.test(senha);
+	let nome = document.getElementById('id-register-input-name').value;
+	let email = document.getElementById('id-register-input-email').value;
+	let senha = document.getElementById('id-register-input-password').value;
+	let confirmSenha = document.getElementById('id-register-input-confirm-password').value;
 
-	// verificando se as senhas dos campos são igual
+	const validacaoSenha = /[a-zA-Z]/.test(senha) && /[0-9]/.test(senha) && /[^a-zA-Z0-9]/.test(senha);
 	const senhasIguais = senha === confirmSenha;
 
 	if (nome == '' || email == '' || senha == '' || confirmSenha == '') {
@@ -44,10 +41,34 @@ botao_registrar.addEventListener('click', () => {
 		exibeErro('As senhas devem ser iguais!');
 		return false;
 	} else {
-		exibeConfirmacao('Cadastro efetuado com sucesso!<br>Redirecionando...');
 		setTimeout(() => {
 			divMsgErro.style.display = 'none';
-			window.location.href = 'login.html';
 		}, 4000);
 	}
+
+	fetch('/usuarios/cadastrar', {
+		method: 'POST',
+		headers: {
+			'Content-type': 'application/json',
+		},
+		body: JSON.stringify({
+			nomeServer: nome,
+			emailServer: email,
+			senhaServer: senha,
+		}),
+	}).then((resposta) => {
+		console.log('resposta: ', resposta);
+		if (resposta.ok) {
+			exibeConfirmacao('Cadastro realizado com sucesso! Redirecionando para o login...');
+			setTimeout(() => {
+				window.location.href = 'login.html';
+			}, 2000);
+		} else {
+			throw "Houve um erro ao tentar realizar o cadastro!"
+		}
+	}).catch((resposta) => {
+		console.log(`#ERRO: ${resposta}`);
+	})
+
+	return false;
 });
