@@ -1,18 +1,19 @@
 const botao_registrar = document.getElementById('id-register-button-confirm');
 const divMsgErro = document.getElementById('msgErro');
 
+const exibeErro = (msg) => {
+	divMsgErro.style.display = 'flex';
+	divMsgErro.innerHTML = msg;
+};
+
+const exibeConfirmacao = (msg) => {
+	divMsgErro.style.display = 'flex';
+	divMsgErro.style.color = '#f8de3c';
+	divMsgErro.innerHTML = msg;
+};
+
 //cadastrando
 botao_registrar.addEventListener('click', () => {
-	const exibeErro = (msg) => {
-		divMsgErro.style.display = 'flex';
-		divMsgErro.innerHTML = msg;
-	};
-
-	const exibeConfirmacao = (msg) => {
-		divMsgErro.style.display = 'flex';
-		divMsgErro.style.color = '#f8de3c';
-		divMsgErro.innerHTML = msg;
-	};
 
 	let nome = document.getElementById('id-register-input-name').value;
 	let email = document.getElementById('id-register-input-email').value;
