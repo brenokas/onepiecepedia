@@ -23,6 +23,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	min-height: 100vh;
 	overflow: hidden;
 }
@@ -45,7 +46,6 @@
 
 .register-container,
 .login-container {
-	position: absolute;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -55,23 +55,6 @@
 	padding: 20px;
 	border-radius: 30px;
 	z-index: 1;
-	margin-top: 2%;
-}
-
-.register-title,
-.login-title {
-	z-index: 1;
-	color: var(--branco);
-	margin-top: 2%;
-	margin-left: 3%;
-	font-size: 2.4rem;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.256);
-	align-self: flex-start;
-}
-
-.register-title-yellow,
-.login-title-yellow {
-	color: var(--amarelo);
 }
 
 .register-msg,
@@ -104,6 +87,10 @@
 	outline: none;
 	box-shadow: none;
 	border: 3px solid var(--azul-claro);
+}
+
+.register-input::placeholder {
+	color: #5757576a;
 }
 
 .register-link-login-text,
