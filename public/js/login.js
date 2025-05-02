@@ -45,11 +45,11 @@ botao_entrar.addEventListener('click', () => {
 					sessionStorage.ID_USUARIO = json.idUsuario;
 
 					setTimeout(() => {
-						window.location = 'quiz.html';
+						window.location = 'index.html';
 					}, 1000);
 				});
 			} else {
-        exibeErro('Login e/ou senha inválidos!')
+				exibeErro('Login e/ou senha inválidos!')
 				console.log('Houve um erro ao tentar realizar o login!');
 				resposta.text().then((texto) => {
 					console.error(texto);
