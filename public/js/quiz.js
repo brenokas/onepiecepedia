@@ -192,7 +192,7 @@ const mostrarResultado = (personagemEscolhido) => {
 	div_quiz.innerHTML = `
     <div class="quiz-page-resultado">
     <p>Seu personagem é: <span class="quiz-page-txt-yellow">${personagemEscolhido}</span></p>
-    <img src="../img/resultado/${personagemEscolhido}-resultado.gif" class="quiz-page-img-resultado" id="img-resultado">
+    <img src="img/resultado/${personagemEscolhido}-resultado.gif" class="quiz-page-img-resultado" id="img-resultado">
     <p class="quiz-page-text-desc-resultado">Confira a descrição do personagem e dados sobre o quiz no seu <span class="quiz-page-txt-yellow">perfil</span>!</p>
     </div>
     

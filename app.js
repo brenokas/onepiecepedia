@@ -20,7 +20,7 @@ var usuarioRouter = require('./src/routes/usuarios');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public'), {index: 'cadastro.html'}));
+app.use(express.static(path.join(__dirname, 'public'), {index: 'login.html'}));
 
 app.use(cors());
 
