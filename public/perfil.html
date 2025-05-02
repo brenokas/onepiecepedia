@@ -6,8 +6,9 @@
 		<title>One Piecepedia</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<script src="js/graficos.js"></script>
+		<script src="js/sessao.js"></script>
 	</head>
-	<body class="perfil-page-body">
+	<body class="perfil-page-body" onload="validarSessao()">
 		<header class="main-header main-page-header">
 			<a href="index.html" class="main-header-index-link">
 				<h1 class="main-header-title main-page-header-title">
@@ -18,7 +19,7 @@
 		</header>
 
 		<div class="perfil-page-title-container">
-			<h1 class="perfil-title">Olá, <span class="perfil-title-yellow">nome!</span></h1>
+			<h1 class="perfil-title">Olá, <span class="perfil-title-yellow" id="perfil-user-name">nome!</span></h1>
 		</div>
 
 		<div class="perfil-page-main-container">
