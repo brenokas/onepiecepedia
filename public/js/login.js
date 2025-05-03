@@ -6,19 +6,7 @@ const exibeErro = (msg) => {
 	divMsgErro.innerHTML = msg;
 };
 
-botao_entrar.addEventListener('click', () => {
-	let emailVar = document.getElementById('id-login-input-email').value;
-	let senhaVar = document.getElementById('id-login-input-password').value;
-
-	if (emailVar == '' || senhaVar == '') {
-		exibeErro('Todos os campos devem ser preenchidos!');
-		return false;
-	} else {
-		setTimeout(() => {
-			divMsgErro.style.display = 'none';
-		}, 2000);
-	}
-
+const entrar = (emailVar, senhaVar) => {
 	console.log('LOGIN: ', emailVar);
 	console.log('SENHA: ', senhaVar);
 
@@ -29,7 +17,7 @@ botao_entrar.addEventListener('click', () => {
 		},
 		body: JSON.stringify({
 			emailServer: emailVar,
-			senhaServer: senhaVar
+			senhaServer: senhaVar,
 		}),
 	})
 		.then(function (resposta) {
@@ -49,7 +37,7 @@ botao_entrar.addEventListener('click', () => {
 					}, 1000);
 				});
 			} else {
-				exibeErro('Login e/ou senha inválidos!')
+				exibeErro('Login e/ou senha inválidos!');
 				console.log('Houve um erro ao tentar realizar o login!');
 				resposta.text().then((texto) => {
 					console.error(texto);
@@ -61,4 +49,20 @@ botao_entrar.addEventListener('click', () => {
 		});
 
 	return false;
+};
+
+botao_entrar.addEventListener('click', () => {
+	let emailVar = document.getElementById('id-login-input-email').value;
+	let senhaVar = document.getElementById('id-login-input-password').value;
+
+	if (emailVar == '' || senhaVar == '') {
+		exibeErro('Todos os campos devem ser preenchidos!');
+		return false;
+	} else {
+		setTimeout(() => {
+			divMsgErro.style.display = 'none';
+		}, 2000);
+	}
+
+	entrar(emailVar, senhaVar);
 });

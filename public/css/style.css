@@ -115,6 +115,7 @@
 .register-button-confirm,
 .login-button-confirm,
 .perfil-button-sair,
+.perfil-button-menu,
 .quiz-button-start {
 	margin-top: 20px;
 	width: 200px;
@@ -131,6 +132,7 @@
 .register-button-confirm:hover,
 .login-button-confirm:hover,
 .perfil-button-sair:hover,
+.perfil-button-menu:hover,
 .quiz-button-start:hover {
 	cursor: pointer;
 	transform: scale(1.05);
@@ -514,10 +516,16 @@
 	align-items: center;
 	justify-content: center;
 	margin-top: 3%;
+	gap: 5%;
 }
 
 .perfil-button-sair:hover {
 	background-color: rgba(255, 0, 0, 0.5);
+}
+
+
+.perfil-button-menu:hover {
+	background-color: var(--azul);
 }
 
 /* QUIZ */
