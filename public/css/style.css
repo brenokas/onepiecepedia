@@ -185,7 +185,7 @@
 }
 
 .main-header-title {
-	margin-left: 38vw;
+	margin-left: 40vw;
 	color: var(--branco);
 	margin-top: 15px;
 }
@@ -261,16 +261,16 @@
 }
 
 .main-page-container-image-zoro {
-	margin-left: 60%;
+	margin-left: 70%;
 	margin-top: 2%;
 }
 
 .main-page-container-section-right {
-	margin-left: 60px;
+	margin-left: 90px;
 }
 
 .main-page-container-title-right {
-	margin-left: 8.5%;
+	margin-left: 10.3%;
 }
 
 .main-page-container-text-right {
@@ -301,7 +301,7 @@
 .sobre-page-title,
 .bandos-page-title {
 	color: var(--amarelo);
-	font-size: 2.5rem;
+	font-size: 3.5rem;
 	margin-top: 3%;
 }
 
@@ -311,7 +311,7 @@
 	position: absolute;
 	width: 50%;
 	margin-top: 4%;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	text-align: justify;
 }
 
@@ -321,7 +321,7 @@
 	width: 60%;
 	margin-top: 3%;
 	margin-left: 7%;
-	font-size: 1.3rem;
+	font-size: 1.6rem;
 	text-align: justify;
 }
 
@@ -361,14 +361,14 @@
 }
 
 .sobre-page-graphic {
-	width: 50%;
+	width: 1500px;
 }
 
 .sobre-page-graphic-title,
 .bandos-page-graphic-title {
 	margin-top: 5%;
 	color: var(--amarelo);
-	font-size: 1.6rem;
+	font-size: 2.5rem;
 }
 
 .sobre-page-footer,
@@ -376,7 +376,7 @@
 .main-page-footer,
 .quiz-page-footer {
 	bottom: 0;
-	font-size: 8px;
+	font-size: 0.7rem;
 	margin-bottom: 20px;
 	color: var(--branco);
 	font-style: italic;
@@ -391,7 +391,7 @@
 
 .bandos-page-img-sanji {
 	margin-top: 3%;
-	width: 75%;
+	width: 100%;
 	margin-left: 70%;
 }
 
@@ -400,6 +400,7 @@
 	height: 50%;
 	margin-top: 4%;
 }
+
 
 .bandos-page-text-left {
 	margin-top: 8%;
@@ -418,7 +419,7 @@
 
 .bandos-page-subtitle {
 	color: var(--amarelo);
-	font-size: 2.5rem;
+	font-size: 3rem;
 	text-align: center;
 	margin-top: 4%;
 }
@@ -431,6 +432,7 @@
 .bandos-page-description {
 	text-align: justify;
 	width: 50%;
+	font-size: 1.4rem;
 }
 
 .bandos-page-description span {
@@ -440,8 +442,12 @@
 .bandos-page-description h4 {
 	color: var(--amarelo);
 	margin-bottom: 4%;
-	font-size: 1.7rem;
+	font-size: 2.6rem;
 	margin-top: 5%;
+}
+
+.bandos-page-img-mugiwaras {
+	width: 40%;
 }
 
 .bandos-page-description-ruivos {
@@ -451,10 +457,15 @@
 
 .bandos-page-img-ruivos {
 	margin-left: 5%;
+	width: 50%;
+}
+
+.bandos-page-img-teach {
+	width: 40%;
 }
 
 .bandos-page-graphic {
-	width: 60%;
+	width: 1500px;
 	margin-top: 3%;
 }
 
@@ -486,25 +497,28 @@
 .perfil-title {
 	color: var(--branco);
 	margin-top: 3%;
+	font-size: 2.6rem;
 }
 
 .perfil-page-subtitle {
 	color: var(--branco);
-	font-size: 1.7rem;
+	font-size: 2rem;
+	margin-bottom: 3%;
 }
 
 .perfil-page-icon-image {
-	width: 70%;
+	width: 90%;
 	border-radius: 50%;
 }
 
 .perfil-page-personagem-name {
-	font-size: 1.7rem;
+	font-size: 2.4rem;
+	margin-top: 4%;
 }
 
 .perfil-page-personagem-description-container {
 	width: 40%;
-	font-size: 1.4rem;
+	font-size: 2rem;
 }
 
 .perfil-page-descricao-personagem-text {
@@ -519,6 +533,13 @@
 	gap: 5%;
 }
 
+.perfil-button-menu,
+.perfil-button-sair {
+	width: 300px;
+	height: 60px;
+	font-size: 1.5rem;
+}
+
 .perfil-button-sair:hover {
 	background-color: rgba(255, 0, 0, 0.5);
 }
@@ -530,9 +551,13 @@
 
 /* QUIZ */
 
+.quiz-page-container {
+	margin-top: 5%;
+}
+
 .quiz-page-title-container {
 	color: var(--amarelo);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -553,7 +578,7 @@
 	justify-content: center;
 	text-align: center;
 	margin-top: 5%;
-	font-size: 1.4rem;
+	font-size: 1.8rem;
 }
 
 .quiz-page-footer {
@@ -591,6 +616,7 @@
 	border-radius: 40px;
 	width: 400px;
 	height: 100px;
+	font-size: 1.3rem;
 	align-content: center;
 	transition: all 0.3s ease;
 	transform: scale(1);
@@ -623,4 +649,11 @@
 .quiz-page-text-desc-resultado {
 	font-size: 1.3rem;
 	margin-top: 3%;
+}
+
+.quiz-button-start {
+	height: 100px;
+	width: 350px;
+	border-radius: 40px;
+	font-size: 2rem;
 }

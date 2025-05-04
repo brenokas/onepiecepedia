@@ -11,7 +11,7 @@ const nomesSagas = [
 	'Zou',
 	'Whole Cake',
 	'Wano',
-	'Saga Final (em andamento)',
+	'Saga Final',
 ];
 
 const qtdEpisodios = [61, 74, 71, 119, 59, 132, 58, 54, 122, 32, 107, 199, 35];
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					color: '#fefefe',
 					font: {
 						weight: 'bold',
-						size: 12,
+						size: '20px',
 					},
 				},
 			},
@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 						text: 'Sagas',
 						color: '#fefefe',
 						font: {
-							size: 15,
+							size: '20px',
 							weight: 'bold',
 						},
 					},
 					ticks: {
 						color: '#fefefe',
 						font: {
-							size: 12,
+							size: '20px',
 						},
 					},
 					grid: {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						text: 'Quantidade de episódios',
 						color: '#fefefe',
 						font: {
-							size: 15,
+							size: '20px',
 							weight: 'bold',
 						},
 					},
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						stepSize: 20,
 						color: '#fefefe',
 						font: {
-							size: 12,
+							size: '20px',
 						},
 					},
 					grid: {
@@ -134,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					color: '#fefefe',
 					font: {
 						weight: 'bold',
-						size: 12,
+						size: '20px',
 					},
-					formatter: function (value) {
+					formatter: (value) => {
 						return new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(value);
 					},
 				},
@@ -153,14 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
 						text: 'Capitães',
 						color: '#fefefe',
 						font: {
-							size: 15,
+							size: '20px',
 							weight: 'bold',
 						},
 					},
 					ticks: {
 						color: '#fefefe',
 						font: {
-							size: 12,
+							size: '20px',
 						},
 					},
 					grid: {
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						text: 'Recompensa',
 						color: '#fefefe',
 						font: {
-							size: 15,
+							size: "20px",
 							weight: 'bold',
 						},
 					},
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						stepSize: 1500000000,
 						color: '#fefefe',
 						font: {
-							size: 12,
+							size: "20px",
 						},
 					},
 					grid: {

@@ -286,9 +286,49 @@ const mostrarResultado = (personagemEscolhido) => {
   `;
 
 	const img_resultado = document.getElementById('img-resultado');
+	const quiz_container = document.getElementById('quiz-container');
+
 	switch (personagemEscolhido) {
-		case ('Sanji', 'Jinbe', 'Usopp'):
-			img_resultado.style.width = '50%';
+		default:
+			quiz_container.style.marginTop = '0';
+			break;
+	}
+
+	switch (personagemEscolhido) {
+		case 'Luffy':
+			img_resultado.style.width = '100%';
+			break;
+
+		case 'Zoro':
+			img_resultado.style.width = '70%';
+			break;
+
+		case 'Nami':
+			img_resultado.style.width = '60%';
+			break;
+
+		case 'Sanji':
+			img_resultado.style.width = '80%';
+			break;
+
+		case 'Robin':
+			img_resultado.style.width = '70%';
+			break;
+
+		case 'Chopper':
+			img_resultado.style.width = '55%';
+			break;
+
+		case 'Jinbe':
+			img_resultado.style.width = '90%';
+			break;
+
+		case 'Usopp':
+			img_resultado.style.width = '90%';
+			break;
+
+		case 'Brook':
+			img_resultado.style.width = '100%';
 			break;
 
 		default:
