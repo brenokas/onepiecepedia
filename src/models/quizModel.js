@@ -11,7 +11,7 @@ function inicio(dataHoraInicio) {
 
 function final(dataHoraFinal) {
 	var instrucao = `
-    INSERT INTO QUIZ (dataHoraFinal) VALUES ('${dataHoraFinal}');
+    INSERT INTO quiz (dataHoraFinal) VALUES ('${dataHoraFinal}');
   `;
 
 	console.log('Executando a instrução SQL: \n' + instrucao);

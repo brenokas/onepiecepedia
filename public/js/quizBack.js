@@ -1,4 +1,3 @@
-
 const arrayPerguntas = [
 	{
 		frase: 'Você prefere passar o dia...',
@@ -168,6 +167,43 @@ const iniciarQuiz = (dataHoraInicio) => {
 	return false;
 };
 
+const finalizarQuiz = (dataHoraFinal) => {
+	console.log('DATA DE FINALIZACAO: ', dataHoraFinal);
+
+	fetch('/quiz/final', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			dataHoraFinalServer: dataHoraFinal,
+		}),
+	})
+		.then((resposta) => {
+			if (resposta.ok) {
+				console.log(resposta);
+
+				resposta.json().then((json) => {
+					console.log(json);
+					console.log(JSON.stringify(json));
+
+					sessionStorage.DATA_FINAL = json.dataHoraFinal;
+				});
+			} else {
+				console.log('Houve um erro ao captar a data e hora de finzalização!');
+				resposta.text().then((texto) => {
+					console.error(texto);
+				});
+			}
+		})
+		.catch((erro) => {
+			console.log(erro);
+		});
+	resultado();
+
+	return false;
+};
+
 button_iniciar.addEventListener('click', () => {
 	iniciarQuiz(dataHoraMomento());
 	button_iniciar.style.display = 'none';
@@ -186,7 +222,7 @@ const mostrarPergunta = () => {
 
 	div_quiz.innerHTML = `
   <div class="perguntas-cima">
-    <div class="pergunta" onclick="responder(0)">
+    <div class="pergunta" onclick="responder(0)">	
       ${pergunta.respostas[0].alternativa}
     </div>
     <div class="pergunta" onclick="responder(1)">
@@ -214,7 +250,7 @@ const responder = (indiceOpcao) => {
 	if (indicePergunta < arrayPerguntas.length) {
 		mostrarPergunta();
 	} else {
-		resultado();
+		finalizarQuiz(dataHoraMomento());
 	}
 };
 

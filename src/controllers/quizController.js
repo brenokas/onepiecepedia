@@ -38,9 +38,9 @@ function final(req, res) {
 	}
 
 	quizModel
-		.inicio(dataHoraFinal)
+		.final(dataHoraFinal)
 		.then((resposta) => {
-			res.status(200).send('Data e hora do final cadastarda com sucesso!');
+			res.status(200).send({ dataHoraFinal: dataHoraFinal });
 		})
 		.catch((erro) => {
 			res.status(500).json(erro.sqlMessage);
