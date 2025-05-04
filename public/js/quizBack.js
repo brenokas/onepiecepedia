@@ -1,3 +1,4 @@
+
 const arrayPerguntas = [
 	{
 		frase: 'Você prefere passar o dia...',
@@ -118,7 +119,57 @@ div_quiz = document.getElementById('quiz-main-container');
 pergunta_quiz = document.getElementById('quiz-description');
 titulo_quiz = document.getElementById('quiz-title');
 
+const dataHoraMomento = () => {
+	const date = new Date();
+	const ano = date.getFullYear();
+	const mes = String(date.getMonth() + 1).padStart(2, '0');
+	const dia = String(date.getDate()).padStart(2, '0');
+	const horas = String(date.getHours()).padStart(2, '0');
+	const minutos = String(date.getMinutes()).padStart(2, '0');
+	const segundos = String(date.getSeconds()).padStart(2, '0');
+
+	const dataHoraFormatada = `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+	return dataHoraFormatada;
+};
+
+const iniciarQuiz = (dataHoraInicio) => {
+	console.log('DATA DE INICIO: ', dataHoraInicio);
+
+	fetch('/quiz/inicio', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			dataHoraInicioServer: dataHoraInicio,
+		}),
+	})
+		.then((resposta) => {
+			if (resposta.ok) {
+				console.log(resposta);
+
+				resposta.json().then((json) => {
+					console.log(json);
+					console.log(JSON.stringify(json));
+
+					sessionStorage.DATA_INICIO = json.dataHoraInicio;
+				});
+			} else {
+				console.log('Houve um erro ao captar a data e hora de inicio!');
+				resposta.text().then((texto) => {
+					console.error(texto);
+				});
+			}
+		})
+		.catch((erro) => {
+			console.log(erro);
+		});
+
+	return false;
+};
+
 button_iniciar.addEventListener('click', () => {
+	iniciarQuiz(dataHoraMomento());
 	button_iniciar.style.display = 'none';
 	pergunta_quiz.style.marginTop = '0.5%';
 	pergunta_quiz.style.marginBottom = '3%';
@@ -200,10 +251,10 @@ const mostrarResultado = (personagemEscolhido) => {
 
 	const img_resultado = document.getElementById('img-resultado');
 	switch (personagemEscolhido) {
-		case 'Sanji', 'Jinbe', 'Usopp':
+		case ('Sanji', 'Jinbe', 'Usopp'):
 			img_resultado.style.width = '50%';
 			break;
-			
+
 		default:
 			break;
 	}
