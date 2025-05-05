@@ -1,8 +1,12 @@
 var database = require('../database/config');
 
 function inicio(dataHoraInicio) {
+
+	// nao consegui acessar o ID do usuario :(
+	// tentativas: session storage, req.body
+	
 	var instrucao = `
-    INSERT INTO quiz (dataHoraInicio) VALUES ('${dataHoraInicio}');
+    INSERT INTO quiz (fkUsuario, dataHoraInicio) VALUES ('', '${dataHoraInicio}') ;
   `;
 
 	console.log('Executando a instrução SQL: \n' + instrucao);
@@ -11,7 +15,7 @@ function inicio(dataHoraInicio) {
 
 function final(dataHoraFinal) {
 	var instrucao = `
-    INSERT INTO quiz (dataHoraFinal) VALUES ('${dataHoraFinal}');
+    INSERT INTO quiz (fkUsuario, dataHoraFinal) VALUES ('', '${dataHoraFinal}');
   `;
 
 	console.log('Executando a instrução SQL: \n' + instrucao);

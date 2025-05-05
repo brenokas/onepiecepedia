@@ -316,7 +316,7 @@ const mostrarResultado = (personagemEscolhido) => {
 			break;
 
 		case 'Chopper':
-			img_resultado.style.width = '55%';
+			img_resultado.style.width = '50%';
 			break;
 
 		case 'Jinbe':

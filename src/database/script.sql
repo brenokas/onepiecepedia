@@ -9,23 +9,29 @@ create table usuario (
 );
 
 create table quiz (
-	idQuiz int primary key auto_increment not null,
-    dataHoraInicio datetime default current_timestamp,
-    dataHoraFinal datetime default current_timestamp
+	idQuiz int primary key not null,
+    dataHoraInicio datetime,
+    dataHoraFinal datetime,
+    fkUsuario int not null,
+    foreign key (fkUsuario) references usuario(idUsuario)
 );
 
 create table personagem (
 	idPersonagem int not null,
-    idUsuario int not null,
-    idQuiz int not null,
+    fkQuiz int not null,
 	nome varchar(45) not null,
     funcao varchar(45) not null,
     recompensa bigint not null,
     descricao varchar(200) not null,
     
-    primary key (idPersonagem, idUsuario, idQuiz),
-    foreign key (idUsuario) references usuario(idUsuario),
-    foreign key (idQuiz) references quiz(idQuiz)
+    primary key (idPersonagem, fkQuiz),
+    foreign key (fkQuiz) references quiz(idQuiz)
 );
 
+drop table personagem;
+drop table quiz;
+
 select * from usuario;
+select * from quiz;
+
+select * from usuario u join quiz q on q.fkUsuario = u.idUsuario;
