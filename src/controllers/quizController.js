@@ -14,14 +14,15 @@ const dataHoraMomento = () => {
 };
 
 function inicio(req, res) {
-	var dataHoraInicio = dataHoraMomento();
+	let dataHoraInicio = dataHoraMomento();
+	let idUsuario = req.body.idUsuarioServer;
 
 	if (dataHoraInicio == undefined) {
 		res.status(400).send('Erro na captação da data e hora do início!');
 	}
 
 	quizModel
-		.inicio(dataHoraInicio)
+		.inicio(dataHoraInicio, idUsuario)
 		.then((resposta) => {
 			res.status(200).send({ dataHoraInicio: dataHoraInicio });
 		})
@@ -31,16 +32,21 @@ function inicio(req, res) {
 }
 
 function final(req, res) {
-	var dataHoraFinal = dataHoraMomento();
+	let dataHoraFinal = dataHoraMomento();
+	let idUsuario = req.body.idUsuarioServer;
+	let dataHoraInicio = req.body.dataHoraInicioFinalServer;
 
 	if (dataHoraFinal == undefined) {
 		res.status(400).send('Erro na captação da data e hora do final!');
 	}
 
 	quizModel
-		.final(dataHoraFinal)
+		.final(dataHoraInicio, dataHoraFinal, idUsuario)
 		.then((resposta) => {
-			res.status(200).send({ dataHoraFinal: dataHoraFinal });
+			res.status(200).send({
+				dataHoraFinal: dataHoraFinal,
+				idUsuario: idUsuario,
+			});
 		})
 		.catch((erro) => {
 			res.status(500).json(erro.sqlMessage);

@@ -131,7 +131,9 @@ const dataHoraMomento = () => {
 	return dataHoraFormatada;
 };
 
-const iniciarQuiz = (dataHoraInicio) => {
+let idUsuarioQuiz = sessionStorage.ID_USUARIO;
+
+const iniciarQuiz = (dataHoraInicio, idUsuario) => {
 	console.log('DATA DE INICIO: ', dataHoraInicio);
 
 	fetch('/quiz/inicio', {
@@ -141,6 +143,7 @@ const iniciarQuiz = (dataHoraInicio) => {
 		},
 		body: JSON.stringify({
 			dataHoraInicioServer: dataHoraInicio,
+			idUsuarioServer: idUsuario,
 		}),
 	})
 		.then((resposta) => {
@@ -152,6 +155,7 @@ const iniciarQuiz = (dataHoraInicio) => {
 					console.log(JSON.stringify(json));
 
 					sessionStorage.DATA_INICIO = json.dataHoraInicio;
+					sessionStorage.ID_USUARIO_INICIO = json.idUsuario;
 				});
 			} else {
 				console.log('Houve um erro ao captar a data e hora de inicio!');
@@ -167,7 +171,7 @@ const iniciarQuiz = (dataHoraInicio) => {
 	return false;
 };
 
-const finalizarQuiz = (dataHoraFinal) => {
+const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario) => {
 	console.log('DATA DE FINALIZACAO: ', dataHoraFinal);
 
 	fetch('/quiz/final', {
@@ -176,7 +180,9 @@ const finalizarQuiz = (dataHoraFinal) => {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
+			dataHoraInicioFinalServer: dataHoraInicioFinal,
 			dataHoraFinalServer: dataHoraFinal,
+			idUsuarioServer: idUsuario,
 		}),
 	})
 		.then((resposta) => {
@@ -187,7 +193,9 @@ const finalizarQuiz = (dataHoraFinal) => {
 					console.log(json);
 					console.log(JSON.stringify(json));
 
+					sessionStorage.DATA_INICIO_FINAL = json.dataHoraInicioFinal;
 					sessionStorage.DATA_FINAL = json.dataHoraFinal;
+					sessionStorage.ID_USUARIO_FINAL = json.idUsuario;
 				});
 			} else {
 				console.log('Houve um erro ao captar a data e hora de finzalização!');
@@ -205,7 +213,7 @@ const finalizarQuiz = (dataHoraFinal) => {
 };
 
 button_iniciar.addEventListener('click', () => {
-	iniciarQuiz(dataHoraMomento());
+	iniciarQuiz(dataHoraMomento(), idUsuarioQuiz);
 	button_iniciar.style.display = 'none';
 	pergunta_quiz.style.marginTop = '0.5%';
 	pergunta_quiz.style.marginBottom = '3%';
@@ -250,7 +258,8 @@ const responder = (indiceOpcao) => {
 	if (indicePergunta < arrayPerguntas.length) {
 		mostrarPergunta();
 	} else {
-		finalizarQuiz(dataHoraMomento());
+		let dataHoraInicioFinal = sessionStorage.DATA_INICIO;
+		finalizarQuiz(dataHoraInicioFinal, dataHoraMomento(), idUsuarioQuiz);
 	}
 };
 

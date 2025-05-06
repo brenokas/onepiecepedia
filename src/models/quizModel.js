@@ -1,21 +1,21 @@
 var database = require('../database/config');
 
-function inicio(dataHoraInicio) {
+function inicio(dataHoraInicio, idUsuario) {
 
 	// nao consegui acessar o ID do usuario :(
 	// tentativas: session storage, req.bodyS
 	
 	var instrucao = `
-    INSERT INTO quiz (fkUsuario, dataHoraInicio) VALUES ('', '${dataHoraInicio}') ;
+    INSERT INTO quiz (fkUsuario, dataHoraInicio) VALUES ('${idUsuario}', '${dataHoraInicio}') ;
   `;
 
 	console.log('Executando a instrução SQL: \n' + instrucao);
 	return database.executar(instrucao);
 }
 
-function final(dataHoraFinal) {
+function final(dataHoraInicio, dataHoraFinal, idUsuario) {
 	var instrucao = `
-    INSERT INTO quiz (fkUsuario, dataHoraFinal) VALUES ('', '${dataHoraFinal}');
+    UPDATE quiz SET dataHoraFinal = '${dataHoraFinal}' WHERE dataHoraInicio = '${dataHoraInicio}' AND fkUsuario = '${idUsuario}';
   `;
 
 	console.log('Executando a instrução SQL: \n' + instrucao);

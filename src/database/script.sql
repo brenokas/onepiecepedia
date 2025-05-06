@@ -9,7 +9,7 @@ create table usuario (
 );
 
 create table quiz (
-	idQuiz int primary key not null,
+	idQuiz int primary key not null auto_increment,
     dataHoraInicio datetime,
     dataHoraFinal datetime,
     fkUsuario int not null,
