@@ -172,7 +172,8 @@
 .sobre-page-body,
 .bandos-page-body,
 .perfil-page-body,
-.quiz-index-page-body {
+.quiz-index-page-body,
+.relacao-page-body {
 	background-color: var(--azul-escuro);
 }
 
@@ -252,6 +253,7 @@
 	margin-top: 130px;
 	position: absolute;
 	text-align: justify;
+	font-size: 1.6rem;
 }
 
 .main-page-container-image-luffy {
@@ -288,6 +290,11 @@
 	text-decoration: none;
 }
 
+.main-page-container-text-me {
+	margin-left: 29%;
+	margin-top: 10%;
+}
+
 /* SOBRE */
 
 .sobre-page-container,
@@ -299,7 +306,8 @@
 }
 
 .sobre-page-title,
-.bandos-page-title {
+.bandos-page-title,
+.relacao-page-title {
 	color: var(--amarelo);
 	font-size: 3.5rem;
 	margin-top: 3%;
@@ -326,7 +334,8 @@
 }
 
 .sobre-page-text-blue,
-.bandos-page-text-blue {
+.bandos-page-text-blue,
+.relacao-page-text-blue {
 	color: var(--azul-claro);
 }
 
@@ -400,7 +409,6 @@
 	height: 50%;
 	margin-top: 4%;
 }
-
 
 .bandos-page-text-left {
 	margin-top: 8%;
@@ -544,7 +552,6 @@
 	background-color: rgba(255, 0, 0, 0.5);
 }
 
-
 .perfil-button-menu:hover {
 	background-color: var(--azul);
 }
@@ -656,4 +663,51 @@
 	width: 350px;
 	border-radius: 40px;
 	font-size: 2rem;
+}
+
+/* RELACAO  */
+
+.relacao-page-main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.relacao-page-title {
+	font-size: 2.4rem;
+	text-align: center;
+}
+.relacao-page-main-text {
+	color: var(--branco);
+	text-align: center;
+	width: 40%;
+	font-size: 1.4rem;
+}
+
+.relacao-page-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10%;
+	gap: 10%;
+}
+
+.relacao-page-container-first {
+	margin-top: 3%;
+}
+
+.relacao-page-container-second {
+	flex-direction: row-reverse;
+}
+
+.relacao-page-img-mugiwaras,
+.relacao-page-img-luffy-tama,
+.relacao-page-img-luffy-gear-5 {
+	width: 40%;
+}
+
+.relacao-page-img-luffy-tama {
+	width: 40%;
 }

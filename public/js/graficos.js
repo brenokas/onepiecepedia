@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						text: 'Recompensa',
 						color: '#fefefe',
 						font: {
-							size: "20px",
+							size: '20px',
 							weight: 'bold',
 						},
 					},
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						stepSize: 1500000000,
 						color: '#fefefe',
 						font: {
-							size: "20px",
+							size: '20px',
 						},
 					},
 					grid: {

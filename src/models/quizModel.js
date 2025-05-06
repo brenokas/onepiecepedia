@@ -3,7 +3,7 @@ var database = require('../database/config');
 function inicio(dataHoraInicio) {
 
 	// nao consegui acessar o ID do usuario :(
-	// tentativas: session storage, req.body
+	// tentativas: session storage, req.bodyS
 	
 	var instrucao = `
     INSERT INTO quiz (fkUsuario, dataHoraInicio) VALUES ('', '${dataHoraInicio}') ;
