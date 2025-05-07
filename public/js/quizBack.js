@@ -171,7 +171,7 @@ const iniciarQuiz = (dataHoraInicio, idUsuario) => {
 	return false;
 };
 
-const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario) => {
+const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario, idPersonagem) => {
 	console.log('DATA DE FINALIZACAO: ', dataHoraFinal);
 
 	fetch('/quiz/final', {
@@ -183,6 +183,7 @@ const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario) => {
 			dataHoraInicioFinalServer: dataHoraInicioFinal,
 			dataHoraFinalServer: dataHoraFinal,
 			idUsuarioServer: idUsuario,
+			idPersonagemServer: idPersonagem,
 		}),
 	})
 		.then((resposta) => {
@@ -196,6 +197,7 @@ const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario) => {
 					sessionStorage.DATA_INICIO_FINAL = json.dataHoraInicioFinal;
 					sessionStorage.DATA_FINAL = json.dataHoraFinal;
 					sessionStorage.ID_USUARIO_FINAL = json.idUsuario;
+					sessionStorage.ID_PERSONAGEM = json.idPersonagem;
 				});
 			} else {
 				console.log('Houve um erro ao captar a data e hora de finzalização!');
@@ -249,6 +251,34 @@ const mostrarPergunta = () => {
   `;
 };
 
+const verificarResultado = () => {
+	let personagem = '';
+	let pontPersonagem = 0;
+
+	for (let p in pontuacao) {
+		if (pontuacao[p] > pontPersonagem) {
+			pontPersonagem = pontuacao[p];
+			personagem = p;
+		}
+	}
+
+	return personagem;
+};
+
+const idPersonagem = () => {
+	let nomePersonagem = verificarResultado();
+
+	if (nomePersonagem == 'Luffy') return 1;
+	else if (nomePersonagem == 'Zoro') return 2;
+	else if (nomePersonagem == 'Nami') return 3;
+	else if (nomePersonagem == 'Sanji') return 4;
+	else if (nomePersonagem == 'Robin') return 5;
+	else if (nomePersonagem == 'Chopper') return 6;
+	else if (nomePersonagem == 'Jinbe') return 7;
+	else if (nomePersonagem == 'Usopp') return 8;
+	else return 9;
+};
+
 const responder = (indiceOpcao) => {
 	const personagem = arrayPerguntas[indicePergunta].respostas[indiceOpcao].personagem;
 	pontuacao[personagem]++;
@@ -259,22 +289,15 @@ const responder = (indiceOpcao) => {
 		mostrarPergunta();
 	} else {
 		let dataHoraInicioFinal = sessionStorage.DATA_INICIO;
-		finalizarQuiz(dataHoraInicioFinal, dataHoraMomento(), idUsuarioQuiz);
+		let idPersonagemResultado = idPersonagem();
+		finalizarQuiz(dataHoraInicioFinal, dataHoraMomento(), idUsuarioQuiz, idPersonagemResultado);
 	}
 };
 
 const resultado = () => {
 	pergunta_quiz.innerHTML = '';
 
-	let personagemEscolhido = '';
-	let personagemPontuacao = 0;
-
-	for (let p in pontuacao) {
-		if (pontuacao[p] > personagemPontuacao) {
-			personagemPontuacao = pontuacao[p];
-			personagemEscolhido = p;
-		}
-	}
+	let personagemEscolhido = verificarResultado();
 
 	mostrarResultado(personagemEscolhido);
 };
@@ -303,44 +326,10 @@ const mostrarResultado = (personagemEscolhido) => {
 			break;
 	}
 
-	switch (personagemEscolhido) {
-		case 'Luffy':
-			img_resultado.style.width = '100%';
-			break;
-
-		case 'Zoro':
-			img_resultado.style.width = '70%';
-			break;
-
-		case 'Nami':
-			img_resultado.style.width = '60%';
-			break;
-
-		case 'Sanji':
-			img_resultado.style.width = '80%';
-			break;
-
-		case 'Robin':
-			img_resultado.style.width = '70%';
-			break;
-
-		case 'Chopper':
-			img_resultado.style.width = '50%';
-			break;
-
-		case 'Jinbe':
-			img_resultado.style.width = '90%';
-			break;
-
-		case 'Usopp':
-			img_resultado.style.width = '90%';
-			break;
-
-		case 'Brook':
-			img_resultado.style.width = '100%';
-			break;
-
-		default:
-			break;
-	}
+	if (personagemEscolhido == 'Luffy' || personagemEscolhido == 'Brook') img_resultado.style.width = '100%';
+	else if (personagemEscolhido == 'Jinbe' || personagemEscolhido == 'Usopp') img_resultado.style.width = '90%';
+	else if (personagemEscolhido == 'Sanji') img_resultado.style.width = '80%';
+	else if (personagemEscolhido == 'Zoro' || personagemEscolhido == 'Robin') img_resultado.style.width = '70%';
+	else if (personagemEscolhido == 'Nami') img_resultado.style.width = '60%';
+	else img_resultado.style.width = '50%';
 };

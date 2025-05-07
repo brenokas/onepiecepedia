@@ -35,17 +35,19 @@ function final(req, res) {
 	let dataHoraFinal = dataHoraMomento();
 	let idUsuario = req.body.idUsuarioServer;
 	let dataHoraInicio = req.body.dataHoraInicioFinalServer;
+	let idPersonagem = req.body.idPersonagemServer;
 
 	if (dataHoraFinal == undefined) {
 		res.status(400).send('Erro na captação da data e hora do final!');
 	}
 
 	quizModel
-		.final(dataHoraInicio, dataHoraFinal, idUsuario)
+		.final(dataHoraInicio, dataHoraFinal, idUsuario, idPersonagem)
 		.then((resposta) => {
 			res.status(200).send({
 				dataHoraFinal: dataHoraFinal,
 				idUsuario: idUsuario,
+				idPersonagem: idPersonagem
 			});
 		})
 		.catch((erro) => {
