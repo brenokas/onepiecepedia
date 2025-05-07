@@ -9,8 +9,7 @@
 		<script src="js/sessao.js"></script>
 		<script src="js/perfil.js"></script>
 	</head>
-	<body class="perfil-page-body">
-		<!-- onload="validarSessao()" -->
+	<body class="perfil-page-body" onload="validarSessao()">
 		<header class="main-header main-page-header">
 			<a href="index.html" class="main-header-index-link">
 				<h1 class="main-header-title main-page-header-title">
@@ -28,7 +27,7 @@
 			<div class="perfil-page-personagem-container">
 				<p class="perfil-page-subtitle">Seu personagem é:</p>
 				<img src="img/icons/zoro.png" alt="Roronora Zoro" class="perfil-page-icon-image" />
-				<p class="perfil-page-personagem-name"><span class="perfil-title-yellow">Zoro</span></p>
+				<p class="perfil-page-personagem-name" id="personagem-name"><span class="perfil-title-yellow">Zoro</span></p>
 			</div>
 
 			<div class="perfil-page-personagem-description-container">

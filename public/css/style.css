@@ -180,9 +180,14 @@
 .main-header {
 	background-color: var(--azul);
 	height: 70px;
+	width: 100vw;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
 }
 
 .main-header-title {
@@ -294,6 +299,9 @@
 	margin-left: 29%;
 	margin-top: 10%;
 }
+.main-page-container-section-sobre {
+	margin-top: 5%;
+}
 
 /* SOBRE */
 
@@ -303,6 +311,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 3%;
 }
 
 .sobre-page-title,
@@ -672,6 +681,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 3%;
 }
 
 .relacao-page-title {
