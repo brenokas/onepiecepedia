@@ -5,11 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>One Piecepedia</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/graficos.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+		<script src="js/graficosDash.js"></script>
 		<script src="js/sessao.js"></script>
 		<script src="js/perfil.js"></script>
 	</head>
 	<body class="perfil-page-body">
+
 		<header class="main-header main-page-header" id="header">
 			<a href="index.html" class="main-header-index-link main-page-header-index-link">Início</a>
 			<h1 class="main-header-title main-page-header-title">
@@ -17,34 +20,57 @@
 			</h1>
 			<a href="perfil.html" class="main-header-profile-link main-page-header-profile-link">Perfil</a>
 		</header>
-		<div class="perfil-page-title-container">
-			<h1 class="perfil-title">Olá, <span class="perfil-title-yellow" id="perfil-user-name">nome!</span></h1>
+
+		<div class="container-perfil">
+			<div class="perfil-page-title-container">
+				<h1 class="perfil-title">Olá, <span class="perfil-title-yellow" id="perfil-user-name">nome!</span></h1>
+			</div>
+			<div class="perfil-page-main-container">
+				<div class="perfil-page-personagem-container">
+					<p class="perfil-page-subtitle">Seu personagem é:</p>
+					<img src="img/icons/zoro.png" alt="Roronora Zoro" class="perfil-page-icon-image" />
+					<p class="perfil-page-personagem-name" id="personagem-name"><span class="perfil-title-yellow">Zoro</span></p>
+				</div>
+				<div class="perfil-page-personagem-description-container">
+					<p class="perfil-page-descricao-personagem-text">
+						<span class="perfil-title-yellow">Descrição do personagem</span>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus amet
+						placeat quos officiis eum vel qui quisquam et vero, atque omnis asperiores, ut est quis corporis, at odio inventore dicta.
+					</p>
+				</div>
+			</div>
 		</div>
 
-		<div class="perfil-page-main-container">
-			<div class="perfil-page-personagem-container">
-				<p class="perfil-page-subtitle">Seu personagem é:</p>
-				<img src="img/icons/zoro.png" alt="Roronora Zoro" class="perfil-page-icon-image" />
-				<p class="perfil-page-personagem-name" id="personagem-name"><span class="perfil-title-yellow">Zoro</span></p>
+		<div class="dashboard-container">
+			<h3 class="perfil-page-graphic-title">Dashboard</h3>
+			<div class="containerKPI">
+				<div class="kpi kpi1">
+					<p class="kpiTitle">Seu tempo de conclusão</p>
+					<p class="kpiData">XXmYYs</p>
+				</div>
+				<div class="kpi kpi2">
+					<p class="kpiTitle">Tempo de conclusão médio</p>
+					<p class="kpiData">XXmYYs</p>
+				</div>
+				<div class="kpi kpi3">
+					<p class="kpiTitle">Seu personagem</p>
+					<p class="kpiData">Nome</p>
+				</div>
+				<div class="kpi kpi4">
+					<p class="kpiTitle">Personagem mais escolhido</p>
+					<p class="kpiData">Nome</p>
+				</div>
 			</div>
-
-			<div class="perfil-page-personagem-description-container">
-				<p class="perfil-page-descricao-personagem-text">
-					<span class="perfil-title-yellow">Descrição do personagem</span>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus amet
-					placeat quos officiis eum vel qui quisquam et vero, atque omnis asperiores, ut est quis corporis, at odio inventore dicta.
-				</p>
+			<div class="perfil-page-graphic">
+				<canvas id="graficoDashboard"></canvas>
 			</div>
 		</div>
 
 		<div class="perfil-page-button-container">
 			<button class="perfil-button-sair" id="botao-sair">Sair</button>
-			<button class="perfil-button-menu" id="botao-menu">Menu Principal</button>
 		</div>
 
-		<footer class="quiz-page-footer">
-			Feito por
-			<a href="https://github.com/brenokas" class="name-default-footer">Breno de Freitas</a>
-			- 1SIS2025 @ São Paulo Tech School
+		<footer class="sobre-page-footer">
+			Feito por <a href="https://github.com/brenokas" class="name-default-footer">Breno de Freitas</a> - 1SIS2025 @ São Paulo Tech School
 		</footer>
 	</body>
 </html>
