@@ -1,9 +1,6 @@
 let proximaAtualizacao;
 
-window.onload = exibirDadosUsuario();
-
 function exibirDadosUsuario() {
-	// var idPersonagem = JSON.parse(sessionStorage.ID_PERSONAGEM);
 	obterDadosGrafico(sessionStorage.ID_PERSONAGEM);
 }
 
@@ -95,7 +92,7 @@ function obterDadosGrafico(idUsuario) {
 					console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
 					var recompensa = resposta[0].recompensa;
-					divRecompensaPersonagem.innerHTML = `${recompensa.toLocaleString('pt-BR', { minimumFractionDIgits: 2 })}`;
+					divRecompensaPersonagem.innerHTML = `${recompensa.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
 				});
 			} else {
 				console.error('Nenhum dado encontrado ou erro na API');

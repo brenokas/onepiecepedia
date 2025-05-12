@@ -212,8 +212,7 @@
 	text-decoration: none;
 	margin-top: 20px;
 	font-size: 22px;
-	transition: all 0.3s ease;
-	transform: scale(1);
+	transition: transform 0.3s ease;
 }
 
 .main-header-profile-link {
@@ -230,7 +229,8 @@
 	text-decoration: none;
 }
 
-.main-header-profile-link:hover {
+.main-header-profile-link:hover,
+.main-header-index-link:hover {
 	transform: scale(1.05);
 }
 
@@ -636,6 +636,17 @@
 .container-perfil {
 	height: 90vh;
 }
+
+#container-msg {
+	display: flex;
+	color: var(--branco);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 5%;
+	font-size: 2rem;
+}
+
 /* QUIZ */
 
 .quiz-page-container {
@@ -743,6 +754,15 @@
 	width: 350px;
 	border-radius: 40px;
 	font-size: 2rem;
+}
+
+.quiz-final-link {
+	text-decoration: none;
+}
+
+.quiz-final-link:visited {
+	color: var(--amarelo);
+	text-decoration: none;
 }
 
 /* RELACAO  */

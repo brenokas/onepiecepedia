@@ -312,7 +312,7 @@ const mostrarResultado = (personagemEscolhido) => {
     <div class="quiz-page-resultado">
     <p>Seu personagem é: <span class="quiz-page-txt-yellow">${personagemEscolhido}</span></p>
     <img src="img/resultado/${personagemEscolhido}-resultado.gif" class="quiz-page-img-resultado" id="img-resultado">
-    <p class="quiz-page-text-desc-resultado">Confira a descrição do personagem e dados sobre o quiz no seu <span class="quiz-page-txt-yellow">perfil</span>!</p>
+    <p class="quiz-page-text-desc-resultado">Confira a descrição do personagem e dados sobre o quiz no seu <a href="perfil.html" class="quiz-final-link"><span class="quiz-page-txt-yellow">perfil</span></a>!</p>
     </div>
     
   `;
@@ -332,4 +332,12 @@ const mostrarResultado = (personagemEscolhido) => {
 	else if (personagemEscolhido == 'Zoro' || personagemEscolhido == 'Robin') img_resultado.style.width = '70%';
 	else if (personagemEscolhido == 'Nami') img_resultado.style.width = '60%';
 	else img_resultado.style.width = '50%';
+};
+
+window.onload = () => {
+	if (sessionStorage.ID_PERSONAGEM != undefined) {
+		pergunta_quiz.innerHTML =
+			'<p>Você já realizou o quiz! Vá até o seu <a href="perfil.html" class="quiz-final-link"><span class="quiz-page-txt-yellow">perfil</span></a> e veja a descrição do seu personagem!</p>';
+		button_iniciar.style.display = 'none';
+	}
 };
