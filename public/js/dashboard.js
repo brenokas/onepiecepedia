@@ -17,25 +17,15 @@ function obterDadosGrafico(idUsuario) {
 	var idPersonagemServer = sessionStorage.ID_PERSONAGEM;
 	var divImgPerfil = document.getElementById('img-perfil');
 
-	if (idPersonagemServer == 1) {
-		divImgPerfil.src = 'img/icons/Luffy-icon.jpg';
-	} else if (idPersonagemServer == 2) {
-		divImgPerfil.src = 'img/icons/Zoro-icon.png';
-	} else if (idPersonagemServer == 3) {
-		divImgPerfil.src = 'img/icons/Nami-icon.jpg';
-	} else if (idPersonagemServer == 4) {
-		divImgPerfil.src = 'img/icons/Sanji-icon.jpg';
-	} else if (idPersonagemServer == 5) {
-		divImgPerfil.src = 'img/icons/Robin-icon.jpg';
-	} else if (idPersonagemServer == 6) {
-		divImgPerfil.src = 'img/icons/Chopper-icon.jpg';
-	} else if (idPersonagemServer == 7) {
-		divImgPerfil.src = 'img/icons/Jinbe-icon.jpg';
-	} else if (idPersonagemServer == 8) {
-		divImgPerfil.src = 'img/icons/Usopp-icon.jpg';
-	} else {
-		divImgPerfil.src = 'img/icons/Brook-icon.jpg';
-	}
+	if (idPersonagemServer == 1) divImgPerfil.src = 'img/icons/Luffy-icon.jpg';
+	else if (idPersonagemServer == 2) divImgPerfil.src = 'img/icons/Zoro-icon.png';
+	else if (idPersonagemServer == 3) divImgPerfil.src = 'img/icons/Nami-icon.jpg';
+	else if (idPersonagemServer == 4) divImgPerfil.src = 'img/icons/Sanji-icon.jpg';
+	else if (idPersonagemServer == 5) divImgPerfil.src = 'img/icons/Robin-icon.jpg';
+	else if (idPersonagemServer == 6) divImgPerfil.src = 'img/icons/Chopper-icon.jpg';
+	else if (idPersonagemServer == 7) divImgPerfil.src = 'img/icons/Jinbe-icon.jpg';
+	else if (idPersonagemServer == 8) divImgPerfil.src = 'img/icons/Usopp-icon.jpg';
+	else divImgPerfil.src = 'img/icons/Brook-icon.jpg';
 
 	fetch(`/personagem/nome/${idPersonagemServer}`, { cache: 'no-store' })
 		.then(function (response) {
