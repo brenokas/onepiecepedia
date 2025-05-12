@@ -258,7 +258,7 @@
 	color: var(--amarelo);
 	margin-left: 50px;
 	font-size: 50px;
-	margin-top: 20px;
+	margin-top: 20px;	
 }
 
 .main-page-container-text {
@@ -286,7 +286,12 @@
 	margin-left: 90px;
 }
 
+
 .main-page-container-title-right {
+	margin-left: 7.5%;
+}
+
+.main-page-container-title-right-bandos {
 	margin-left: 10.3%;
 }
 
@@ -508,7 +513,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 20%;
+	gap: 10%;
 }
 
 .perfil-page-personagem-container {
@@ -548,6 +553,9 @@
 
 .perfil-page-descricao-personagem-text {
 	color: var(--branco);
+	width: 800px;
+	margin-top: 10%;
+	font-size: 1.5rem;
 }
 
 .perfil-page-button-container {

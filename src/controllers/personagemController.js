@@ -1,8 +1,10 @@
 var personagemModel = require('../models/personagemModel');
 
-function listar(req, res) {
+function nome(req, res) {
+	let idPersonagem = req.params.idPersonagemServer;
+
 	personagemModel
-		.listar()
+		.nome(idPersonagem)
 		.then((resultado) => {
 			res.status(200).json(resultado);
 		})
@@ -11,17 +13,34 @@ function listar(req, res) {
 		});
 }
 
-function cadastrar(req, res) {
-	var nome = req.body.personagemNome;
-
-	if (nome == undefined) {
-		res.status(200).send('O nome do personagem está undefined!');
-	}
-
+function funcao(req, res) {
+	let idPersonagem = req.params.idPersonagemServer;
 	personagemModel
-		.cadastrar(nome)
-		.then((resposta) => {
-			res.status(200).send('Personagem cadastrado com sucesso!');
+		.funcao(idPersonagem)
+		.then((resultado) => {
+			res.status(200).json(resultado);
+		})
+		.catch((erro) => {
+			res.status(500).json(erro.sqlMessage);
+		});
+}
+function recompensa(req, res) {
+	let idPersonagem = req.params.idPersonagemServer;
+	personagemModel
+		.recompensa(idPersonagem)
+		.then((resultado) => {
+			res.status(200).json(resultado);
+		})
+		.catch((erro) => {
+			res.status(500).json(erro.sqlMessage);
+		});
+}
+function descricao(req, res) {
+	let idPersonagem = req.params.idPersonagemServer;
+	personagemModel
+		.descricao(idPersonagem)
+		.then((resultado) => {
+			res.status(200).json(resultado);
 		})
 		.catch((erro) => {
 			res.status(500).json(erro.sqlMessage);
@@ -29,6 +48,8 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-	listar,
-	cadastrar,
+	nome,
+	funcao,
+	recompensa,
+	descricao,
 };

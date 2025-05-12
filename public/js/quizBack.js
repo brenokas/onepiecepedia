@@ -131,7 +131,7 @@ const dataHoraMomento = () => {
 	return dataHoraFormatada;
 };
 
-let idUsuarioQuiz = sessionStorage.ID_USUARIO;
+var idUsuarioQuiz = sessionStorage.ID_USUARIO;
 
 const iniciarQuiz = (dataHoraInicio, idUsuario) => {
 	console.log('DATA DE INICIO: ', dataHoraInicio);
