@@ -1,37 +1,46 @@
-let proximaAtualizacao;
-
 function exibirDadosUsuario() {
-	obterDadosGrafico(sessionStorage.ID_PERSONAGEM);
+	obterDadosGrafico(sessionStorage.ID_USUARIO);
 }
 
 function obterDadosGrafico(idUsuario) {
-	if (proximaAtualizacao != undefined) {
-		clearTimeout(proximaAtualizacao);
+	function nomePersonagemMaisVotado(id) {
+		if (id == 1) return 'Monkey D. Luffy';
+		else if (id == 2) return 'Roronoa Zoro';
+		else if (id == 3) return 'Nami';
+		else if (id == 4) return 'Sanji';
+		else if (id == 5) return 'Nico Robin';
+		else if (id == 6) return 'Chopper';
+		else if (id == 7) return 'Jinbe';
+		else if (id == 8) return 'Usopp';
+		else return 'Brook';
 	}
 
-	let divNomePersonagem = document.getElementById('nome-personagem-perfil');
-	let divNomePersonagemDashboard = document.getElementById('kpiNome');
-	let divDescricaoPersonagem = document.getElementById('perfil-descricaoPersonagem');
-	let divRecompensaPersonagem = document.getElementById('perfil-recompensaPersonagem');
-	let divFuncaoPersonagem = document.getElementById('perfil-funcaoPersonagem');
-	let idPersonagemServer = sessionStorage.ID_PERSONAGEM;
-	let varIdUsuario = sessionStorage.ID_USUARIO;
-	let divImgPerfil = document.getElementById('img-perfil');
-	let kpiTempoDeConclusao = document.getElementById('kpiTempoDeConclusao');
-	let kpiMediaTempo = document.getElementById('kpiMediaTempo');
-	let kpiPersonagemMaisEscolhido = document.getElementById('kpiPersonagemMaisEscolhido');
+	function trocaImagemPerfil(id) {
+		const divImgPerfil = document.getElementById('img-perfil');
+		if (id == 1) divImgPerfil.src = 'img/icons/Luffy-icon.jpg';
+		else if (id == 2) divImgPerfil.src = 'img/icons/Zoro-icon.png';
+		else if (id == 3) divImgPerfil.src = 'img/icons/Nami-icon.jpg';
+		else if (id == 4) divImgPerfil.src = 'img/icons/Sanji-icon.jpg';
+		else if (id == 5) divImgPerfil.src = 'img/icons/Robin-icon.jpg';
+		else if (id == 6) divImgPerfil.src = 'img/icons/Chopper-icon.jpg';
+		else if (id == 7) divImgPerfil.src = 'img/icons/Jinbe-icon.jpg';
+		else if (id == 8) divImgPerfil.src = 'img/icons/Usopp-icon.jpg';
+		else divImgPerfil.src = 'img/icons/Brook-icon.jpg';
+	}
 
-	if (idPersonagemServer == 1) divImgPerfil.src = 'img/icons/Luffy-icon.jpg';
-	else if (idPersonagemServer == 2) divImgPerfil.src = 'img/icons/Zoro-icon.png';
-	else if (idPersonagemServer == 3) divImgPerfil.src = 'img/icons/Nami-icon.jpg';
-	else if (idPersonagemServer == 4) divImgPerfil.src = 'img/icons/Sanji-icon.jpg';
-	else if (idPersonagemServer == 5) divImgPerfil.src = 'img/icons/Robin-icon.jpg';
-	else if (idPersonagemServer == 6) divImgPerfil.src = 'img/icons/Chopper-icon.jpg';
-	else if (idPersonagemServer == 7) divImgPerfil.src = 'img/icons/Jinbe-icon.jpg';
-	else if (idPersonagemServer == 8) divImgPerfil.src = 'img/icons/Usopp-icon.jpg';
-	else divImgPerfil.src = 'img/icons/Brook-icon.jpg';
+	const idPersonagem = sessionStorage.ID_PERSONAGEM;
+	trocaImagemPerfil(idPersonagem);
 
-	fetch(`/personagem/nome/${idPersonagemServer}`, { cache: 'no-store' })
+	const divNomePersonagem = document.getElementById('nome-personagem-perfil');
+	const divNomePersonagemDashboard = document.getElementById('kpiNome');
+	const divDescricaoPersonagem = document.getElementById('perfil-descricaoPersonagem');
+	const divRecompensaPersonagem = document.getElementById('perfil-recompensaPersonagem');
+	const divFuncaoPersonagem = document.getElementById('perfil-funcaoPersonagem');
+	const kpiTempoDeConclusao = document.getElementById('kpiTempoDeConclusao');
+	const kpiMediaTempo = document.getElementById('kpiMediaTempo');
+	const kpiPersonagemMaisEscolhido = document.getElementById('kpiPersonagemMaisEscolhido');
+
+	fetch(`/personagem/nome/${idUsuario}`, { cache: 'no-store' })
 		.then(function (response) {
 			if (response.ok) {
 				response.json().then(function (resposta) {
@@ -47,7 +56,7 @@ function obterDadosGrafico(idUsuario) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
 
-	fetch(`/personagem/descricao/${idPersonagemServer}`, { cache: 'no-store' })
+	fetch(`/personagem/descricao/${idUsuario}`, { cache: 'no-store' })
 		.then(function (response) {
 			if (response.ok) {
 				response.json().then(function (resposta) {
@@ -63,7 +72,7 @@ function obterDadosGrafico(idUsuario) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
 
-	fetch(`/personagem/funcao/${idPersonagemServer}`, { cache: 'no-store' })
+	fetch(`/personagem/funcao/${idUsuario}`, { cache: 'no-store' })
 		.then(function (response) {
 			if (response.ok) {
 				response.json().then(function (resposta) {
@@ -79,7 +88,7 @@ function obterDadosGrafico(idUsuario) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
 
-	fetch(`/personagem/recompensa/${idPersonagemServer}`, { cache: 'no-store' })
+	fetch(`/personagem/recompensa/${idUsuario}`, { cache: 'no-store' })
 		.then(function (response) {
 			if (response.ok) {
 				response.json().then(function (resposta) {
@@ -96,7 +105,7 @@ function obterDadosGrafico(idUsuario) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
 
-	fetch(`/kpi/tempoDeConclusao/${varIdUsuario}`, { cache: 'no-store' })
+	fetch(`/kpi/tempoDeConclusao/${idUsuario}`, { cache: 'no-store' })
 		.then(function (response) {
 			if (response.ok) {
 				response.json().then(function (resposta) {
@@ -127,18 +136,6 @@ function obterDadosGrafico(idUsuario) {
 		.catch(function (error) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
-
-	function nomePersonagemMaisVotado(id) {
-		if (id == 1) return 'Monkey D. Luffy';
-		else if (id == 2) return 'Roronoa Zoro';
-		else if (id == 3) return 'Nami';
-		else if (id == 4) return 'Sanji';
-		else if (id == 5) return 'Nico Robin';
-		else if (id == 6) return 'Chopper';
-		else if (id == 7) return 'Jinbe';
-		else if (id == 8) return 'Usopp';
-		else return 'Brook';
-	}
 
 	fetch(`/kpi/personagemMaisEscolhido`, { cache: 'no-store' })
 		.then(function (response) {
