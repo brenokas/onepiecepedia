@@ -26,6 +26,7 @@ function funcao(req, res) {
 }
 function recompensa(req, res) {
 	let idPersonagem = req.params.idPersonagemServer;
+
 	personagemModel
 		.recompensa(idPersonagem)
 		.then((resultado) => {

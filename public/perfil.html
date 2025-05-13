@@ -11,6 +11,7 @@
 		<script src="js/sessao.js"></script>
 		<script src="js/perfil.js"></script>
 		<script src="js/dashboard.js" defer></script>
+		<link rel="shortcut icon" href="img/favicon/hat.png" type="image/x-icon" />
 	</head>
 	<body class="perfil-page-body">
 		<header class="main-header main-page-header" id="header">
@@ -21,9 +22,7 @@
 			<a href="perfil.html" class="main-header-profile-link main-page-header-profile-link">Perfil</a>
 		</header>
 
-		<div class="container-msg" id="container-msg">
-
-		</div>
+		<div class="container-msg" id="container-msg"></div>
 
 		<div class="container-perfil" id="container-perfil">
 			<div class="perfil-page-title-container">
@@ -32,7 +31,7 @@
 			<div class="perfil-page-main-container">
 				<div class="perfil-page-personagem-container">
 					<p class="perfil-page-subtitle">Seu personagem é:</p>
-					<img src="" alt="Roronora Zoro" class="perfil-page-icon-image" id="img-perfil"/>
+					<img src="" alt="Roronora Zoro" class="perfil-page-icon-image" id="img-perfil" />
 					<p class="perfil-page-personagem-name" id="personagem-name"><span class="perfil-title-yellow" id="nome-personagem-perfil"></span></p>
 				</div>
 				<div class="perfil-page-personagem-description-container">
@@ -40,13 +39,17 @@
 						<span class="perfil-title-yellow">Descrição do personagem</span>
 						<br />
 						<span id="perfil-descricaoPersonagem"></span>
-						<br /><br>
-						<span class="perfil-title-yellow">Recompensa</span>
+						<br /><br />
+						<span class="perfil-title-yellow">Recompensa</span
+						><span
+							class="informativo"
+							title="Todo pirata no mundo possui uma recompensa por sua cabeça. Quanto maior o valor, maior o nível de poder daquela pessoa e mais procurada ela é."
+							>ⓘ</span
+						>
 						<br />
-						<img src="img/svg/berry.svg" class="img-belly" /> <span id="perfil-recompensaPersonagem"></span>
-						<br><br>
+						<img src="img/svg/berry.svg" class="img-belly" /> <span id="perfil-recompensaPersonagem"></span> <br /><br />
 						<span class="perfil-title-yellow">Função</span>
-						<br>
+						<br />
 						<span id="perfil-funcaoPersonagem"></span>
 					</p>
 				</div>
@@ -58,11 +61,11 @@
 			<div class="containerKPI">
 				<div class="kpi kpi1">
 					<p class="kpiTitle">Seu tempo de conclusão</p>
-					<p class="kpiData">XXmYYs</p>
+					<p class="kpiData" id="kpiTempoDeConclusao"></p>
 				</div>
 				<div class="kpi kpi2">
 					<p class="kpiTitle">Tempo de conclusão médio</p>
-					<p class="kpiData">XXmYYs</p>
+					<p class="kpiData" id="kpiMediaTempo"></p>
 				</div>
 				<div class="kpi kpi3">
 					<p class="kpiTitle">Seu personagem</p>
@@ -70,7 +73,7 @@
 				</div>
 				<div class="kpi kpi4">
 					<p class="kpiTitle">Personagem mais escolhido</p>
-					<p class="kpiData">Nome</p>
+					<p class="kpiData" id="kpiPersonagemMaisEscolhido"></p>
 				</div>
 			</div>
 			<div class="perfil-page-graphic">
@@ -83,7 +86,9 @@
 		</div>
 
 		<footer class="sobre-page-footer">
-			Feito por <a href="https://github.com/brenokas" class="name-default-footer">Breno de Freitas</a> - 1SIS2025 @ São Paulo Tech School
+			Feito por
+			<a href="https://github.com/brenokas" class="name-default-footer">Breno de Freitas</a>
+			- 1SIS2025 @ São Paulo Tech School
 		</footer>
 	</body>
 </html>
