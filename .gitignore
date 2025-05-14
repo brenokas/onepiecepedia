@@ -1,5 +1,8 @@
 .github
 .prettierrc
+.env
+.env.dev
+.vscode
 
 package-lock.json
 
