@@ -1,14 +1,14 @@
-create database onepiecepedia;
+create database if not exists onepiecepedia;
 use onepiecepedia;
 
-create table usuario (
+create table if not exists usuario (
 	idUsuario int primary key auto_increment not null,
     nome varchar(45) not null,
     email varchar(45) unique not null,
     senha varchar(45) not null
 );
 
-create table personagem (
+create table if not exists personagem (
 	idPersonagem int primary key not null,
 	nome varchar(45) not null,
     funcao varchar(45) not null,
@@ -16,7 +16,7 @@ create table personagem (
     descricao varchar(1000) not null
 );
 
-create table quiz (
+create table if not exists quiz (
 	idQuiz int primary key not null auto_increment,
     dataHoraInicio datetime,
     dataHoraFinal datetime,
