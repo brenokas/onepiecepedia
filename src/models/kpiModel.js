@@ -19,8 +19,9 @@ function mediaTempodeConclusao() {
 
 function personagemMaisEscolhido() {
 	const instrucao = `
-	select fkPersonagem, count(fkPersonagem) from quiz group by fkPersonagem order by count(fkPersonagem) desc limit 1;
+	SELECT fkPersonagem, count(fkPersonagem) FROM quiz GROUP BY fkPersonagem ORDER BY count(fkPersonagem) DESC LIMIT 1;
 	`;
+	
 	console.log('Executando a instrução SQL: \n' + instrucao);
 	return database.executar(instrucao);
 }

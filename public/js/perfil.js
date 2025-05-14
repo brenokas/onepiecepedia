@@ -18,30 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		exibirDadosUsuario();
 	}
 
-
 	botao_sair.addEventListener('click', () => {
 		sessionStorage.clear();
 		window.location.href = 'login.html';
 	});
 });
 
+function getNomePersonagemPorId(id) {
+	if (id == 1) return 'Monkey D. Luffy';
+	else if (id == 2) return 'Roronoa Zoro';
+	else if (id == 3) return 'Nami';
+	else if (id == 4) return 'Sanji';
+	else if (id == 5) return 'Nico Robin';
+	else if (id == 6) return 'Chopper';
+	else if (id == 7) return 'Jinbe';
+	else if (id == 8) return 'Usopp';
+	else return 'Brook';
+}
+
 function exibirDadosUsuario() {
 	obterDadosGrafico(sessionStorage.ID_USUARIO);
 }
 
 function obterDadosGrafico(idUsuario) {
-	function nomePersonagemMaisVotado(id) {
-		if (id == 1) return 'Monkey D. Luffy';
-		else if (id == 2) return 'Roronoa Zoro';
-		else if (id == 3) return 'Nami';
-		else if (id == 4) return 'Sanji';
-		else if (id == 5) return 'Nico Robin';
-		else if (id == 6) return 'Chopper';
-		else if (id == 7) return 'Jinbe';
-		else if (id == 8) return 'Usopp';
-		else return 'Brook';
-	}
-
 	function trocaImagemPerfil(id) {
 		const divImgPerfil = document.getElementById('img-perfil');
 		if (id == 1) divImgPerfil.src = 'img/icons/Luffy-icon.jpg';
@@ -171,7 +170,7 @@ function obterDadosGrafico(idUsuario) {
 					console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
 					const idPersonagemMaisVotado = resposta[0].fkPersonagem;
-					kpiPersonagemMaisEscolhido.innerHTML = nomePersonagemMaisVotado(idPersonagemMaisVotado);
+					kpiPersonagemMaisEscolhido.innerHTML = getNomePersonagemPorId(idPersonagemMaisVotado);
 				});
 			} else {
 				console.error('Nenhum dado encontrado ou erro na API');
@@ -180,4 +179,145 @@ function obterDadosGrafico(idUsuario) {
 		.catch(function (error) {
 			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
 		});
+
+	fetch(`/dashboard/qtdEscolhasPersonagem`, { cache: 'no-store' })
+		.then(function (response) {
+			if (response.ok) {
+				response.json().then(function (resposta) {
+					console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+					plotarGrafico(resposta);
+				});
+			} else {
+				console.error('Nenhum dado encontrado ou erro na API');
+			}
+		})
+		.catch(function (error) {
+			console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+		});
+}
+
+function plotarGrafico(resposta) {
+	console.log('iniciando plotagem do gráfico...');
+
+	// Criando estrutura para plotar gráfico - labels
+	let labels = [];
+
+	// Criando estrutura para plotar gráfico - dados
+	let dados = {
+		labels: labels,
+		datasets: [
+			{
+				label: 'Quantidade de escolhas',
+				data: [],
+				borderWidth: 1,
+				backgroundColor: '#F8DE3C',
+				tension: 0.4,
+			},
+		],
+	};
+
+	console.log('----------------------------------------------');
+	console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":');
+	console.log(resposta);
+
+	// Inserindo valores recebidos em estrutura para plotar o gráfico
+	for (i = 0; i < resposta.length; i++) {
+		var registro = resposta[i];
+
+		var nomePersonagem = getNomePersonagemPorId(registro.fkPersonagem);
+
+		labels.push(nomePersonagem);
+		dados.datasets[0].data.push(registro['count(fkPersonagem)']);
+	}
+	console.log('PORRA: ', dados.datasets);
+
+	console.log('----------------------------------------------');
+	console.log('O gráfico será plotado com os respectivos valores:');
+	console.log('Labels:');
+	console.log(labels);
+	console.log('Dados:');
+	console.log(dados.datasets);
+	console.log('----------------------------------------------');
+
+	// Criando estrutura para plotar gráfico - config
+	const config = {
+		type: 'bar',
+		data: dados,
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					display: false,
+				},
+				datalabels: {
+					align: 'top',
+					anchor: 'end',
+					color: '#fefefe',
+					font: {
+						weight: 'bold',
+						size: '20px',
+					},
+				},
+			},
+
+			interaction: {
+				mode: 'index',
+			},
+
+			scales: {
+				x: {
+					title: {
+						display: true,
+						text: 'Personagens',
+						color: '#fefefe',
+						font: {
+							size: '20px',
+							weight: 'bold',
+						},
+					},
+
+					ticks: {
+						color: '#fefefe',
+						font: {
+							size: '20px',
+						},
+					},
+
+					grid: {
+						color: 'rgb(254, 254, 254, 0.10)',
+					},
+				},
+
+				y: {
+					beginAtZero: true,
+					min: 0,
+					max: 20,
+					title: {
+						display: true,
+						text: 'Escolhas',
+						color: '#fefefe',
+						font: {
+							size: '20px',
+							weight: 'bold',
+						},
+					},
+					ticks: {
+						stepSize: 2,
+						color: '#fefefe',
+						font: {
+							size: '20px',
+						},
+					},
+
+					grid: {
+						color: 'rgb(254, 254, 254, 0.10)',
+					},
+				},
+			},
+		},
+		plugins: [ChartDataLabels],
+	};
+
+	// Adicionando gráfico criado em div na tela
+	let myChart = new Chart(document.getElementById(`graficoDashboard`), config);
 }

@@ -19,7 +19,8 @@ var indexRouter = require("./src/routes/index");
 var usuarioRouter = require('./src/routes/usuarios');
 var personagemRouter = require('./src/routes/personagem');
 var quizRouter = require('./src/routes/quiz');
-var kpiController = require('./src/routes/kpi');
+var kpiRouter = require('./src/routes/kpi');
+var dashboardRouter = require('./src/routes/dashboard');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +32,8 @@ app.use("/", indexRouter);
 app.use('/usuarios', usuarioRouter);
 app.use('/personagem', personagemRouter);
 app.use('/quiz', quizRouter);
-app.use('/kpi', kpiController);
+app.use('/kpi', kpiRouter);
+app.use('/dashboard', dashboardRouter);
 
 app.listen(PORTA_APP, function () {
 	console.log(`                                                                           

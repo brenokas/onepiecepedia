@@ -562,7 +562,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 10%;
+	margin-top: 5%;
 	gap: 5%;
 }
 
@@ -592,11 +592,12 @@
 }
 
 .perfil-page-graphic {
-	width: 50vw;
+	width: 70vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 3%;
+	height: 550px;
 }
 
 .containerKPI {
