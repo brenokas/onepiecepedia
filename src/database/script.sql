@@ -84,15 +84,3 @@ insert into personagem values
     no Triângulo Florian. Ele é um usuário de Akuma no Mi que comeu a Yomi Yomi no Mi, o que o torna um pseudo-imortal por causa de seus poderes. Ele é o nono 
     membro do Bando do Chapéu de Palha, e o oitavo a se juntar à tripulação de Luffy. Ele é também um dos dois Espadachins a bordo de seu atual navio, o outro 
     sendo Zoro. Ele preenche o cargo do tão esperado músico que Luffy queria para sua tripulação desde que sua jornada começou. Brook é engraçado, gentil e valente.');
-    
-    
-select * from personagem;
-select * from quiz;
-
-drop table personagem;
-drop table quiz;
-
-select timediff(dataHoraFinal, dataHoraInicio) 'Tempo de conclusão' from quiz where fkUsuario = 2;
-
-select * from usuario;
-select * from quiz;
