@@ -1,6 +1,7 @@
 .github
 .prettierrc
 .env
+.env.dev
 
 .vscode/
 
