@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					if (response.ok) {
 						response.json().then(function (resposta) {
 							console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-							const jaFezQuiz = resposta[0]['EXISTS(SELECT 1 FROM quiz WHERE fkUsuario = 1)'];
+							const jaFezQuiz = resposta[0][`EXISTS(SELECT 1 FROM quiz WHERE fkUsuario = ${idUsuario})`];
 
 							if (jaFezQuiz == 1) {
 								// se ele ja fez quiz, eu puxo os dados pra conta
@@ -31,12 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 											response.json().then(function (resposta) {
 												console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 												idPersonagem = resposta[0].fkPersonagem;
-
-												sessionStorage.setItem('ID_PERSONAGEM', idPersonagem);
-
-												if (idPersonagem != 0) {
-												} else {
+												if (idPersonagem == 0) {
 													console.error('Erro na obtenção do id do personagem');
+												} else {
+													sessionStorage.setItem('ID_PERSONAGEM', idPersonagem);
 												}
 											});
 										} else {
