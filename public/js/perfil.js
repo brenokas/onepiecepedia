@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const containerMsg = document.getElementById('container-msg');
 	const containerNome = document.getElementById('perfil-user-name');
 	const nomeUsuario = sessionStorage.NOME_USUARIO;
+	const botao_personagem = document.getElementById('button-ver-outros-personagens');
+
 
 	if (sessionStorage.ID_PERSONAGEM == undefined) {
-		console.log('ID DO PERSONAGEM É UNDEFINED');
-
 		const container = document.getElementById('container-perfil');
 		const containerDash = document.getElementById('container-dashboard');
 		const containerButton = document.getElementById('button-container');
@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		containerMsg.innerHTML = `<p class="msg-sem-quiz">Olá, <span class="perfil-title-yellow">${nomeUsuario}!</span> Para ter acesso ao perfil, você precisa realizar o <a href="quiz.html" class="quiz-final-link"><span class="perfil-title-yellow">quiz!</span></p></a>`;
 	} else {
-		console.log('TEM ID DO PERSONAGEM');
-		containerNome.innerHTML = nomeUsuario;
+		containerNome.innerHTML = `${nomeUsuario}!`;
 		containerMsg.style.display = 'none';
 		exibirDadosUsuario();
 	}
@@ -27,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		sessionStorage.clear();
 		window.location.href = 'login.html';
 	});
+
+	botao_personagem.addEventListener('click', () => {
+		window.location.href = 'personagens.html'
+	})
 });
 
 function getNomePersonagemPorId(id) {
