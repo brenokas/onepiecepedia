@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const botao_sair = document.getElementById('botao-sair');
 	const containerMsg = document.getElementById('container-msg');
+	const containerNome = document.getElementById('perfil-user-name');
+	const nomeUsuario = sessionStorage.NOME_USUARIO;
 
 	if (sessionStorage.ID_PERSONAGEM == undefined) {
+		console.log('ID DO PERSONAGEM É UNDEFINED');
+
 		const container = document.getElementById('container-perfil');
 		const containerDash = document.getElementById('container-dashboard');
 		const containerButton = document.getElementById('button-container');
-		const nomeUsuario = sessionStorage.NOME_USUARIO;
 
 		container.style.display = 'none';
 		containerDash.style.display = 'none';
@@ -14,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		containerMsg.innerHTML = `<p class="msg-sem-quiz">Olá, <span class="perfil-title-yellow">${nomeUsuario}!</span> Para ter acesso ao perfil, você precisa realizar o <a href="quiz.html" class="quiz-final-link"><span class="perfil-title-yellow">quiz!</span></p></a>`;
 	} else {
+		console.log('TEM ID DO PERSONAGEM');
+		containerNome.innerHTML = nomeUsuario;
 		containerMsg.style.display = 'none';
 		exibirDadosUsuario();
 	}
@@ -229,7 +234,6 @@ function plotarGrafico(resposta) {
 		labels.push(nomePersonagem);
 		dados.datasets[0].data.push(registro['count(fkPersonagem)']);
 	}
-	console.log('PORRA: ', dados.datasets);
 
 	console.log('----------------------------------------------');
 	console.log('O gráfico será plotado com os respectivos valores:');
