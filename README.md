@@ -15,6 +15,6 @@
 ## 📷 Imagens
 <img src="public/img/readme/print-cadastro.png">
 <img src="public/img/readme/print-login.png">
-<img src="public/img/readme/print-home.png.png">
-<img src="public/img/readme/print-perfil.png.png">
-<img src="public/img/readme/print-page.png.png">
+<img src="public/img/readme/print-home.png">
+<img src="public/img/readme/print-perfil.png">
+<img src="public/img/readme/print-page.png">
