@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		containerMsg.innerHTML = `<p class="msg-sem-quiz">Olá, <span class="perfil-title-yellow">${nomeUsuario}!</span> Para ter acesso ao perfil, você precisa realizar o <a href="quiz.html" class="quiz-final-link"><span class="perfil-title-yellow">quiz!</span></p></a>`;
 	} else {
-		containerNome.innerHTML = `${nomeUsuario}!`;
+		containerNome.innerHTML = `${nomeUsuario.charAt(0) + nomeUsuario.slice(1).toLowerCase()}!`;
 		containerMsg.style.display = 'none';
 		exibirDadosUsuario();
 	}
