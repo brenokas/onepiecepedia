@@ -1,6 +1,6 @@
 # ONE PIECEPEDIA
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="public/img/readme/one piecepedia.png" alt="OnePiecePedia logo">
 
 > One Piecepedia é o meu projeto individual do 1º semestre de Sistemas de Informação na São Paulo Tech School. Nele, eu busco trazer informações e um game a respeito do anime One Piece de Eiichiro Oda, aplicando neste projeto todos os conceitos aprendidos em sala de aula no semestre.
 
@@ -13,4 +13,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
 ## 📷 Imagens
-<img src="">
+<img src="public/img/readme/print-cadastro.png">
+<img src="public/img/readme/print-login.png">
+<img src="public/img/readme/print-home.png.png">
+<img src="public/img/readme/print-perfil.png.png">
+<img src="public/img/readme/print-page.png.png">
