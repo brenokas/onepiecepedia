@@ -1,5 +1,16 @@
 # ONE PIECEPEDIA
-## Site sobre o anime One Piece por Breno de Freitas
 
-One Piecepedia é o meu projeto individual do 1º semestre de Sistemas de Informação na São Paulo Tech School. Nele, eu busco trazer informações e um game a respeito do anime One Piece de Eiichiro Oda, aplicando neste projeto todos os conceitos aprendidos em sala de aula no semestre.
-Neste projeto foi utilizado HTML5, CSS3, Javascript e a API web data viz fornecida pela faculdade.
+<img src="imagem.png" alt="Exemplo imagem">
+
+> One Piecepedia é o meu projeto individual do 1º semestre de Sistemas de Informação na São Paulo Tech School. Nele, eu busco trazer informações e um game a respeito do anime One Piece de Eiichiro Oda, aplicando neste projeto todos os conceitos aprendidos em sala de aula no semestre.
+
+## 💻 Tecnologias utilizadas
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+
+## 📷 Imagens
+<img src="">

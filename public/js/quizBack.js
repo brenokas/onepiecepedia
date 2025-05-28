@@ -251,7 +251,7 @@ const mostrarPergunta = () => {
   `;
 };
 
-const verificarResultado = () => {
+function verificarResultado() {
 	let personagem = '';
 	let pontPersonagem = 0;
 
@@ -263,9 +263,9 @@ const verificarResultado = () => {
 	}
 
 	return personagem;
-};
+}
 
-const idPersonagem = () => {
+function idPersonagem() {
 	let nomePersonagem = verificarResultado();
 
 	if (nomePersonagem == 'Luffy') return 1;
@@ -277,9 +277,9 @@ const idPersonagem = () => {
 	else if (nomePersonagem == 'Jinbe') return 7;
 	else if (nomePersonagem == 'Usopp') return 8;
 	else return 9;
-};
+}
 
-const responder = (indiceOpcao) => {
+function responder(indiceOpcao) {
 	const personagem = arrayPerguntas[indicePergunta].respostas[indiceOpcao].personagem;
 	pontuacao[personagem]++;
 
@@ -292,17 +292,17 @@ const responder = (indiceOpcao) => {
 		let idPersonagemResultado = idPersonagem();
 		finalizarQuiz(dataHoraInicioFinal, dataHoraMomento(), idUsuarioQuiz, idPersonagemResultado);
 	}
-};
+}
 
-const resultado = () => {
+function resultado() {
 	pergunta_quiz.innerHTML = '';
 
 	let personagemEscolhido = verificarResultado();
 
 	mostrarResultado(personagemEscolhido);
-};
+}
 
-const mostrarResultado = (personagemEscolhido) => {
+function mostrarResultado(personagemEscolhido) {
 	titulo_quiz.innerHTML = 'Resultado';
 	if (pergunta_quiz) {
 		pergunta_quiz.remove();
@@ -332,7 +332,7 @@ const mostrarResultado = (personagemEscolhido) => {
 	else if (personagemEscolhido == 'Zoro' || personagemEscolhido == 'Robin') img_resultado.style.width = '70%';
 	else if (personagemEscolhido == 'Nami') img_resultado.style.width = '60%';
 	else img_resultado.style.width = '50%';
-};
+}
 
 window.onload = () => {
 	if (sessionStorage.ID_PERSONAGEM != undefined) {
