@@ -133,7 +133,7 @@ const dataHoraMomento = () => {
 
 var idUsuarioQuiz = sessionStorage.ID_USUARIO;
 
-const iniciarQuiz = (dataHoraInicio, idUsuario) => {
+function iniciarQuiz (dataHoraInicio, idUsuario) {
 	console.log('DATA DE INICIO: ', dataHoraInicio);
 
 	fetch('/quiz/inicio', {
@@ -171,7 +171,7 @@ const iniciarQuiz = (dataHoraInicio, idUsuario) => {
 	return false;
 };
 
-const finalizarQuiz = (dataHoraInicioFinal, dataHoraFinal, idUsuario, idPersonagem) => {
+function finalizarQuiz (dataHoraInicioFinal, dataHoraFinal, idUsuario, idPersonagem) {
 	console.log('DATA DE FINALIZACAO: ', dataHoraFinal);
 
 	fetch('/quiz/final', {
@@ -224,7 +224,7 @@ button_iniciar.addEventListener('click', () => {
 	mostrarPergunta();
 });
 
-const mostrarPergunta = () => {
+function mostrarPergunta () {
 	const pergunta = arrayPerguntas[indicePergunta];
 	titulo_quiz.innerHTML = `${indicePergunta + 1}ª pergunta`;
 
