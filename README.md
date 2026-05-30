@@ -13,8 +13,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
 ## 📷 Imagens
-<img src="public/img/readme/print-cadastro.png">
-<img src="public/img/readme/print-login.png">
-<img src="public/img/readme/print-home.png">
-<img src="public/img/readme/print-perfil.png">
-<img src="public/img/readme/print-page.png">
+<img src="frontend/public/img/readme/print-cadastro.png">
+<img src="frontend/public/img/readme/print-login.png">
+<img src="frontend/public/img/readme/print-home.png">
+<img src="frontend/public/img/readme/print-perfil.png">
+<img src="frontend/public/img/readme/print-page.png">
